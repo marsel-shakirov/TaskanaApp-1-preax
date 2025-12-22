@@ -14,7 +14,12 @@ export const TaskList = () => {
 				</p>
 			</div>
 			<div className={styles.taskListImg}>
-				<img src={TaskIllustrationImage} width="463" height="319" alt="" />
+				<img
+					src={TaskIllustrationImage}
+					width="463"
+					height="319"
+					alt="Девушка в позе лотоса среди отмеченных задач"
+				/>
 			</div>
 		</section>
 	)

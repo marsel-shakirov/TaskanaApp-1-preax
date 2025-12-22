@@ -6,7 +6,12 @@ export const Statistic = () => {
 	return (
 		<div className={styles.statistic}>
 			<div className={styles.statisticImg}>
-				<img src={NoteBookImage} width="231" height="168" alt="" />
+				<img
+					src={NoteBookImage}
+					width="231"
+					height="168"
+					alt="Блокнот с линиями и ручкой, лежащей наискосок"
+				/>
 			</div>
 			<p className={styles.statisticDesc}>
 				Здесь мы поможем тебе управлять твоими задачами, отслеживать статистику
