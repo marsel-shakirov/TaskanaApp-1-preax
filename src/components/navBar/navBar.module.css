@@ -3,7 +3,7 @@
 	background-color: var(--color-neutral-100);
 	padding-inline: var(--padding-sm);
 	padding-block: var(--padding-md);
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .navList {
@@ -11,17 +11,14 @@
 }
 
 .navLink {
-	display: inline-flex;
-	position: relative;
+	display: flex;
 	column-gap: var(--gap-xs);
 	align-items: center;
 	cursor: pointer;
 	box-shadow: var(--box-shadow-base);
-	border-color: transparent;
 	border-radius: var(--border-radius-btn);
 	background-color: var(--color-neutral-800);
 	padding: var(--padding-xxs);
-	min-width: 172px;
 	color: var(--color-neutral-0);
 	font-weight: 600;
 	text-decoration: none;

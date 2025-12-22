@@ -1,10 +1,4 @@
-export const Icon = ({
-	name,
-	width = '24',
-	height = '24',
-	viewBox = '0 0 24 24',
-	fill = '#fff',
-}) => {
+export const Icon = ({ name, width = '21', height = '21', fill = '#fff' }) => {
 	const isNotFoundName = !name
 
 	if (isNotFoundName) {
@@ -13,7 +7,7 @@ export const Icon = ({
 	}
 
 	return (
-		<svg width={width} height={height} viewBox={viewBox} fill={fill}>
+		<svg width={width} height={height} fill={fill}>
 			<use href={`#icon-${name}`}></use>
 		</svg>
 	)

@@ -1,10 +1,7 @@
 .sideBar {
 	display: flex;
-	row-gap: var(--gap-md);
-	flex-direction: column;
 	border-left: 1px solid var(--color-neutral-300);
 	background-color: var(--color-neutral-100);
-	padding-inline: var(--padding-md);
-	padding-block: var(--padding-md);
-	overflow-y: scroll;
+	padding: var(--padding-md);
+	overflow-y: auto;
 }

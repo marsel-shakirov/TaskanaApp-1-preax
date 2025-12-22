@@ -1,8 +1,8 @@
+import { ICON_INBOX } from '@/constants'
+
 import { Icon } from '@/components'
 
 import styles from './navBar.module.css'
-
-const ICON_INBOX = 'inbox'
 
 export const NavBar = () => {
 	return (

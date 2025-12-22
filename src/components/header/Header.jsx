@@ -1,8 +1,8 @@
+import { ICON_PLUS } from '@/constants'
+
 import { Button, Icon, Logo } from '@/components'
 
 import styles from './header.module.css'
-
-const ICON_PLUS = 'plus'
 
 export const Header = () => {
 	return (
