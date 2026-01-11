@@ -1,4 +1,6 @@
-import TaskIllustrationImage from '@/assets/images/svg/task-illustration.svg'
+import { ICON_TASK } from '@/constants'
+
+import { Illustration } from '@/components/illustration/Illustration.jsx'
 
 import styles from './taskList.module.css'
 
@@ -14,11 +16,11 @@ export const TaskList = () => {
 				</p>
 			</div>
 			<div className={styles.taskListImg}>
-				<img
-					src={TaskIllustrationImage}
+				<Illustration
+					name={ICON_TASK}
 					width="463"
 					height="319"
-					alt="Девушка в позе лотоса среди отмеченных задач"
+					color="#141414"
 				/>
 			</div>
 		</section>

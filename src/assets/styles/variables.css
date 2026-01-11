@@ -7,15 +7,35 @@
 	--font-size-sm: 16px;
 	--font-size-xs: 14px;
 
-	--color-neutral-0: #ffffff;
-	--color-neutral-100: #fbfbfb;
+	--white: #ffffff;
+	--black: 0, 0, 0;
+	--black-base: #141414;
+	--black-base-0: #1c1c1c;
+	--black-base-100: #6c6c6c;
+	--black-base-200: #bfbfbf;
+	--black-base-300: #ececec;
+	--black-base-400: #fbfbfb;
+
+	--color-neutral-0: var(--white);
+	--color-neutral-100: var(--black-base-400);
 	--color-neutral-200: #f3f3f3;
-	--color-neutral-300: #ececec;
-	--color-neutral-400: #bfbfbf;
-	--color-neutral-600: #6c6c6c;
+	--color-neutral-300: var(--black-base-300);
+	--color-neutral-400: var(--black-base-200);
+	--color-neutral-600: var(--black-base-100);
 	--color-neutral-700: #393939;
-	--color-neutral-800: #1c1c1c;
-	--color-neutral-900: #141414;
+	--color-neutral-800: var(--black-base-0);
+	--color-neutral-900: var(--black-base);
+
+	--color-dark-0: var(--black-base);
+	--color-dark-100: var(--black-base-0);
+	--color-dark-200: #262626;
+	--color-dark-300: #333333;
+	--color-dark-400: var(--black-base-100);
+	--color-dark-500: #8c8c8c;
+	--color-dark-600: var(--black-base-200);
+	--color-dark-700: var(--black-base-300);
+	--color-dark-800: var(--black-base-400);
+	--color-dark-900: var(--white);
 
 	--color-primary-0: #fff4f4;
 	--color-primary-100: #ffcece;
@@ -24,7 +44,8 @@
 	--color-primary-400: #d51010;
 	--color-primary-500: #a60c0c;
 	--color-primary-600: #760909;
-	--color-base-black: #000000;
+
+	--color-base-black: rgb(var(--black));
 
 	--padding-lg: 40px;
 	--padding-md: 24px;
@@ -33,9 +54,11 @@
 	--padding-xxs: 8px;
 
 	--border-radius-btn: 8px;
+	--border-radius-themeBtn: 4px;
 
 	--gap-lg: 40px;
 	--gap-md: 26px;
+	--gap-xmd: 24px;
 	--gap-sm: 16px;
 	--gap-xs: 8px;
 
@@ -43,7 +66,11 @@
 	--z-index-titleBefore: -1;
 	--z-index-header: 1000;
 
-	--box-shadow-base: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	--box-shadow-base: 2px 2px 4px rgba(var(--black), 0.2);
+	--box-shadow-sm: 2px 8px 12px rgba(var(--black), 0.1);
+
+	--box-shadow-baseHover: 2px 8px 12px rgba(var(--black), 0.25);
+	--box-shadow-smHover: 2px 8px 12px rgba(var(--black), 0.2);
 
 	--animate: 0.3s;
 }

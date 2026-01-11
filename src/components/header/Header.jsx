@@ -1,3 +1,4 @@
+import { ThemeSwitcher } from '../themeSwitcher/ThemeSwitcher'
 import { ICON_PLUS } from '@/constants'
 
 import { Button, Icon, Logo } from '@/components'
@@ -8,10 +9,13 @@ export const Header = () => {
 	return (
 		<header className={styles.header}>
 			<Logo />
-			<Button>
-				<Icon name={ICON_PLUS} width="24" height="24" fill="#fff" />
-				<span>Создать</span>
-			</Button>
+			<div className={styles.headerInner}>
+				<Button className="mainButton">
+					<Icon name={ICON_PLUS} width="24" height="24" color="#fff" />
+					<span>Создать</span>
+				</Button>
+				<ThemeSwitcher />
+			</div>
 		</header>
 	)
 }

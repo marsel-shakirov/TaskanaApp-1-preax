@@ -1,0 +1,9 @@
+.theme {
+	display: flex;
+	column-gap: 4px;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--border-radius-btn);
+	background-color: #262626;
+	padding: 4px;
+}

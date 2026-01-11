@@ -11,3 +11,8 @@
 	padding-left: var(--padding-sm);
 	padding-block: var(--padding-xs);
 }
+
+.headerInner {
+	display: flex;
+	column-gap: var(--gap-xmd);
+}

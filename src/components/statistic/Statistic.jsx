@@ -1,4 +1,6 @@
-import NoteBookImage from '@/assets/images/svg/notebook.svg'
+import { ICON_NOTE } from '@/constants'
+
+import { Illustration } from '@/components/illustration/Illustration.jsx'
 
 import styles from './Statistic.module.css'
 
@@ -6,11 +8,11 @@ export const Statistic = () => {
 	return (
 		<div className={styles.statistic}>
 			<div className={styles.statisticImg}>
-				<img
-					src={NoteBookImage}
+				<Illustration
+					name={ICON_NOTE}
 					width="231"
 					height="168"
-					alt="Блокнот с линиями и ручкой, лежащей наискосок"
+					color="#393939"
 				/>
 			</div>
 			<p className={styles.statisticDesc}>

@@ -1,4 +1,4 @@
-.button {
+.mainButton {
 	display: inline-flex;
 	column-gap: var(--gap-xs);
 	justify-content: center;
@@ -13,4 +13,23 @@
 	padding-block: var(--padding-xxs);
 	color: var(--color-neutral-0);
 	font-weight: 600;
+}
+
+.sunButton {
+	background-color: var(--color-primary-400);
+}
+
+.moonButton {
+	background-color: transparent;
+}
+
+.sunButton,
+.moonButton {
+	--width: 32px;
+	cursor: pointer;
+	border: none;
+	border-radius: var(--border-radius-themeBtn);
+	padding: 4px;
+	width: var(--width);
+	height: var(--width);
 }
