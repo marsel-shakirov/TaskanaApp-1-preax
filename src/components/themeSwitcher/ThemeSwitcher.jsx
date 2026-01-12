@@ -1,15 +1,24 @@
 import { ICON_MOON, ICON_SUN } from '@/constants'
 
-import { useTheme } from '@/hooks/context/useTheme'
+import { useEffect, useState } from 'react'
 
 import { Button, Icon } from '@/components'
 
 import styles from './ThemeSwitcher.module.css'
 
 export const ThemeSwitcher = () => {
-	const { theme, setTheme } = useTheme()
+	const [theme, setTheme] = useState('light')
 
-	console.log(theme)
+	useEffect(() => {
+		const prefersDark = window.matchMedia(
+			'(prefers-color-scheme: dark)'
+		).matches
+		setTheme(prefersDark ? 'dark' : 'light')
+	}, [])
+
+	useEffect(() => {
+		document.body.style.colorScheme = theme
+	}, [theme])
 
 	const handleThemeLight = () => {
 		setTheme('light')
