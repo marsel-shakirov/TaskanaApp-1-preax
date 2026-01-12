@@ -10,7 +10,7 @@ export const Header = () => {
 		<header className={styles.header}>
 			<Logo />
 			<div className={styles.headerInner}>
-				<Button className="mainButton">
+				<Button className="createButton">
 					<Icon name={ICON_PLUS} width="24" height="24" color="#fff" />
 					<span>Создать</span>
 				</Button>

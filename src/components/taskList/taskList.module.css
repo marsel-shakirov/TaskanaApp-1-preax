@@ -3,8 +3,9 @@
 	row-gap: var(--gap-lg);
 	flex-direction: column;
 	align-items: center;
-	padding-inline: var(--padding-md);
+	padding-right: 9px;
 	padding-bottom: var(--padding-md);
+	padding-left: var(--padding-md);
 	height: calc(100vh - 210px);
 }
 

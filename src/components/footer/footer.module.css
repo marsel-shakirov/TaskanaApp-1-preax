@@ -7,19 +7,27 @@
 }
 
 .preax {
-	color: var(--color-neutral-600);
+	color: light-dark(var(--color-neutral-600), var(--color-dark-600));
 	font-size: var(--font-size-sm);
 }
 
 .link {
-	transition: opacity var(--animate);
+	transition:
+		outline var(--animate),
+		color var(--animate);
+	border-radius: 4px;
 	color: inherit;
-	text-decoration-line: 1px;
 	text-transform: uppercase;
 }
 
 @media (any-hover: hover) {
 	.link:hover {
-		opacity: 0.7;
+		color: light-dark(var(--color-neutral-800), var(--color-dark-800));
 	}
+}
+
+.link:focus {
+	outline: 2px solid light-dark(var(--color-neutral-900), var(--color-dark-900));
+	outline-offset: 3px;
+	color: light-dark(var(--color-neutral-800), var(--color-dark-800));
 }

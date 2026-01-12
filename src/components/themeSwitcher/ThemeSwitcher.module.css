@@ -3,7 +3,17 @@
 	column-gap: 4px;
 	justify-content: center;
 	align-items: center;
+	transition: all var(--animate);
+	box-shadow: 2px 2px 4px rgba(var(--black), 0.5);
 	border-radius: var(--border-radius-btn);
 	background-color: #262626;
 	padding: 4px;
+}
+.theme:hover {
+	box-shadow: 2px 8px 12px rgba(var(--black), 0.8);
+}
+.theme:focus-within {
+	outline: 2px solid var(--color-neutral-0);
+	outline-offset: 2px;
+	box-shadow: 2px 8px 12px rgba(var(--black), 0.8);
 }

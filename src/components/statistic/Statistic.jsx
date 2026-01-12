@@ -12,7 +12,7 @@ export const Statistic = () => {
 					name={ICON_NOTE}
 					width="231"
 					height="168"
-					color="#393939"
+					className="noteImage"
 				/>
 			</div>
 			<p className={styles.statisticDesc}>

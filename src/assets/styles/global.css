@@ -1,6 +1,7 @@
 @import url('./normalize.css');
 @import url('./fonts.css');
 @import url('./variables.css');
+@import url('./icons.css');
 @import url('./utils.css');
 
 :root {
@@ -11,10 +12,13 @@
 }
 
 body {
-	transition: height 0.2s linear;
-	background-color: var(--color-neutral-0);
+	transition:
+		background-color var(--animate),
+		color var(--animate);
+	background-color: light-dark(var(--color-neutral-0), var(--color-dark-0));
 	min-width: 1280px;
-	color: var(--color-neutral-800);
+	color: light-dark(var(--color-neutral-800), var(--color-dark-800));
+	color-scheme: light dark;
 	font-weight: 400;
 	line-height: 1.5;
 	font-family: var(--font-family), sans-serif;

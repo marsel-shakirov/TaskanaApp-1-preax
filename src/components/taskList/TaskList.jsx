@@ -20,7 +20,7 @@ export const TaskList = () => {
 					name={ICON_TASK}
 					width="463"
 					height="319"
-					color="#141414"
+					className="taskImage"
 				/>
 			</div>
 		</section>

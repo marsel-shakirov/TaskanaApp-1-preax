@@ -1,11 +1,18 @@
 .mainButton {
+	transition:
+		background-color var(--animate),
+		color var(--animate),
+		outline var(--animate);
+	cursor: pointer;
+	box-shadow: 2px 2px 4px rgba(var(--black), 0.5);
+	border: none;
+}
+
+.createButton {
 	display: inline-flex;
 	column-gap: var(--gap-xs);
 	justify-content: center;
 	align-items: center;
-	cursor: pointer;
-	box-shadow: var(--box-shadow-base);
-	border: none;
 	border-radius: var(--border-radius-btn);
 	background-color: var(--color-primary-400);
 	padding-right: var(--padding-sm);
@@ -15,21 +22,49 @@
 	font-weight: 600;
 }
 
+@media (any-hover: hover) {
+	.createButton:hover {
+		background-color: var(--color-primary-500);
+	}
+}
+
+.createButton:focus {
+	outline: 2px solid var(--color-neutral-0);
+	outline-offset: 2px;
+	background-color: var(--color-primary-500);
+}
+
 .sunButton {
-	background-color: var(--color-primary-400);
+	background-color: light-dark(var(--color-primary-400), transparent);
+	color: light-dark(#ffffff, #6c6c6c);
 }
 
 .moonButton {
-	background-color: transparent;
+	background-color: light-dark(transparent, var(--color-primary-400));
+	color: light-dark(#6c6c6c, #ffffff);
 }
 
 .sunButton,
 .moonButton {
 	--width: 32px;
-	cursor: pointer;
-	border: none;
+	outline: none;
+	box-shadow: 2px 2px 4px rgba(var(--black), 0.5);
 	border-radius: var(--border-radius-themeBtn);
 	padding: 4px;
 	width: var(--width);
 	height: var(--width);
+}
+
+@media (any-hover: hover) {
+	.sunButton:hover,
+	.moonButton:hover {
+		background-color: var(--color-neutral-0);
+		color: var(--color-base-black);
+	}
+}
+
+.sunButton:focus,
+.moonButton:focus {
+	background-color: var(--color-neutral-0);
+	color: var(--color-base-black);
 }

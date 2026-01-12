@@ -10,7 +10,7 @@ export const NavBar = () => {
 			<ul className={styles.navList}>
 				<li className={styles.navItem}>
 					<a className={styles.navLink} href="#">
-						<Icon name={ICON_INBOX} width="24" height="24" fill="#fff" />
+						<Icon name={ICON_INBOX} width="24" height="24" />
 						<span className={styles.navLinkText}>Входящие</span>
 					</a>
 				</li>

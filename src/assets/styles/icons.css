@@ -1,0 +1,10 @@
+.taskImage #taskLine,
+.noteImage #noteStroke {
+	transition: fill var(--animate);
+	fill: light-dark(var(--color-neutral-300), var(--color-dark-300));
+}
+
+.noteImage #noteBackground {
+	transition: fill var(--animate);
+	fill: light-dark(var(--color-neutral-0), var(--color-dark-0));
+}

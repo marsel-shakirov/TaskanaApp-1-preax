@@ -72,5 +72,5 @@
 	--box-shadow-baseHover: 2px 8px 12px rgba(var(--black), 0.25);
 	--box-shadow-smHover: 2px 8px 12px rgba(var(--black), 0.2);
 
-	--animate: 0.3s;
+	--animate: 0.2s;
 }
