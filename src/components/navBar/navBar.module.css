@@ -3,7 +3,6 @@
 		border-right var(--animate),
 		background-color var(--animate),
 		outline var(--animate);
-	outline: none;
 	border-right: 1px solid
 		light-dark(var(--color-neutral-300), var(--color-dark-300));
 	background-color: light-dark(var(--color-neutral-100), var(--color-dark-100));
@@ -18,7 +17,6 @@
 }
 
 .navItem {
-	/* box-shadow: var(--box-shadow-base); */
 	border-radius: 8px;
 }
 
@@ -28,8 +26,7 @@
 	align-items: center;
 	transition: all var(--animate);
 	cursor: pointer;
-	outline: 2px solid light-dark(var(--color-neutral-100), var(--color-dark-100));
-	border: 2px solid light-dark(var(--color-neutral-100), var(--color-dark-100));
+	box-shadow: var(--box-shadow-base);
 	border-radius: 8px;
 	background-color: light-dark(var(--color-neutral-800), var(--color-dark-800));
 	padding: 8px;
@@ -40,17 +37,16 @@
 
 .navLink:focus {
 	outline: 2px solid light-dark(var(--color-dark-0), var(--color-neutral-0));
+	outline-offset: 2px;
 	box-shadow: var(--box-shadow-baseHover);
-	border: 2px solid light-dark(var(--color-neutral-0), var(--color-dark-0));
 	background-color: light-dark(var(--color-neutral-700), var(--color-dark-700));
-	padding: 8px;
 }
 @media (any-hover: hover) {
 	.navLink:hover {
+		box-shadow: var(--box-shadow-baseHover);
 		background-color: light-dark(
 			var(--color-neutral-700),
 			var(--color-dark-700)
 		);
-		/* box-shadow: var(--box-shadow-baseHover); */
 	}
 }
