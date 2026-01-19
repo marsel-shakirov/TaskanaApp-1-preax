@@ -4,7 +4,6 @@
 		color var(--animate),
 		outline var(--animate);
 	cursor: pointer;
-	box-shadow: 2px 2px 4px rgba(var(--black), 0.5);
 	border: none;
 }
 
@@ -35,11 +34,13 @@
 }
 
 .sunButton {
+	box-shadow: 2px 2px 4px light-dark(rgba(var(--black), 0.5), transparent);
 	background-color: light-dark(var(--color-primary-400), transparent);
 	color: light-dark(#ffffff, #6c6c6c);
 }
 
 .moonButton {
+	box-shadow: 2px 2px 4px light-dark(transparent, rgba(var(--black), 0.5));
 	background-color: light-dark(transparent, var(--color-primary-400));
 	color: light-dark(#6c6c6c, #ffffff);
 }
@@ -48,7 +49,6 @@
 .moonButton {
 	--width: 32px;
 	outline: none;
-	box-shadow: 2px 2px 4px rgba(var(--black), 0.5);
 	border-radius: var(--border-radius-themeBtn);
 	padding: 4px;
 	width: var(--width);
