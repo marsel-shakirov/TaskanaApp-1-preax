@@ -1,19 +1,39 @@
-.theme {
-	display: flex;
-	column-gap: 4px;
-	justify-content: center;
-	align-items: center;
-	transition: all var(--animate);
-	box-shadow: 2px 2px 4px rgba(var(--black), 0.5);
+.themeSwitcher {
 	border-radius: var(--border-radius-btn);
-	background-color: #262626;
+	> button:focus-visible {
+		outline: 2px solid var(--color-base-white);
+		outline-offset: 2px;
+		box-shadow: var(--box-shadow-baseHover);
+	}
+}
+.themeSun,
+.themeMoon {
+	--width: 32px;
+	outline: none;
+	border-radius: var(--border-radius-themeBtn);
 	padding: 4px;
+	width: var(--width);
+	height: var(--width);
 }
-.theme:hover {
-	box-shadow: 2px 8px 12px rgba(var(--black), 0.8);
+
+.themeSun {
+	box-shadow: 2px 2px 4px light-dark(rgba(var(--black), 0.5), transparent);
+	background-color: light-dark(var(--color-primary-400), transparent);
+	color: light-dark(var(--color-base-white), var(--color-base-600));
 }
-.theme:focus-within {
-	outline: 2px solid var(--color-neutral-0);
-	outline-offset: 2px;
-	box-shadow: 2px 8px 12px rgba(var(--black), 0.8);
+
+.themeMoon {
+	box-shadow: 2px 2px 4px light-dark(transparent, rgba(var(--black), 0.5));
+	background-color: light-dark(transparent, var(--color-primary-400));
+	color: light-dark(var(--color-base-600), var(--color-base-white));
+}
+
+:is(.themeSwitcher:hover, .themeSwitcher > button:focus-visible) .themeSun {
+	background-color: light-dark(var(--color-base-white), transparent);
+	color: light-dark(var(--color-base-900), var(--color-base-600));
+}
+
+:is(.themeSwitcher:hover, .themeSwitcher > button:focus-visible) .themeMoon {
+	background-color: light-dark(transparent, var(--color-base-white));
+	color: light-dark(var(--color-base-600), var(--color-base-900));
 }

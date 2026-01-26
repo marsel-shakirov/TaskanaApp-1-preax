@@ -1,15 +1,16 @@
 .statistic {
 	display: flex;
-	row-gap: var(--gap-md);
+	row-gap: 24px;
 	flex-direction: column;
 	align-items: center;
-	transition: all var(--animate);
-	margin-block: auto;
+	margin: auto;
 }
+
 .statisticDesc {
 	text-align: center;
 }
 
 .statisticImg {
-	color: light-dark(var(--color-neutral-700), var(--color-dark-700));
+	display: flex;
+	color: var(--color-neutral-700);
 }

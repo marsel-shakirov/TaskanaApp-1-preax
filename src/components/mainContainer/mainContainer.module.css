@@ -5,11 +5,9 @@
 
 .mainTitle {
 	position: sticky;
-	transition: background-color var(--animate);
 	margin-inline: auto;
 	inset: 0;
-	background-color: inherit;
-	background-color: light-dark(var(--color-neutral-0), var(--color-dark-0));
+	background-color: var(--color-neutral-0);
 	padding: var(--padding-md);
 	max-width: 996px;
 	font-weight: 700;

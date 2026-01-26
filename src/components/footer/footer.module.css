@@ -7,27 +7,24 @@
 }
 
 .preax {
-	color: light-dark(var(--color-neutral-600), var(--color-dark-600));
+	color: var(--color-neutral-600);
 	font-size: var(--font-size-sm);
 }
 
 .link {
-	transition:
-		outline var(--animate),
-		color var(--animate);
 	border-radius: 4px;
-	color: inherit;
+	color: var(--color-neutral-600);
 	text-transform: uppercase;
-}
 
-@media (any-hover: hover) {
-	.link:hover {
-		color: light-dark(var(--color-neutral-800), var(--color-dark-800));
+	&:focus-visible {
+		outline: 2px solid var(--color-neutral-900);
+		outline-offset: 3px;
+		color: var(--color-neutral-800);
 	}
-}
 
-.link:focus {
-	outline: 2px solid light-dark(var(--color-neutral-900), var(--color-dark-900));
-	outline-offset: 3px;
-	color: light-dark(var(--color-neutral-800), var(--color-dark-800));
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--color-neutral-800);
+		}
+	}
 }

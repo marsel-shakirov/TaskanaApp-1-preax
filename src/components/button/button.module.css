@@ -1,10 +1,23 @@
 .mainButton {
-	transition:
-		background-color var(--animate),
-		color var(--animate),
-		outline var(--animate);
 	cursor: pointer;
 	border: none;
+}
+
+.themeButton {
+	display: inline-flex;
+	column-gap: 4px;
+	justify-content: center;
+	align-items: center;
+	box-shadow: var(--box-shadow-base);
+	border-radius: var(--border-radius-btn);
+	background-color: #262626;
+	padding: 4px;
+
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: var(--box-shadow-baseHover);
+		}
+	}
 }
 
 .createButton {
@@ -12,59 +25,36 @@
 	column-gap: var(--gap-xs);
 	justify-content: center;
 	align-items: center;
+	box-shadow: var(--box-shadow-base);
 	border-radius: var(--border-radius-btn);
 	background-color: var(--color-primary-400);
 	padding-right: var(--padding-sm);
 	padding-left: var(--padding-xs);
 	padding-block: var(--padding-xxs);
-	color: var(--color-neutral-0);
+	color: var(--color-base-white);
 	font-weight: 600;
-}
 
-@media (any-hover: hover) {
-	.createButton:hover {
+	&:focus-visible {
+		outline: 2px solid var(--color-base-white);
+		outline-offset: 2px;
+		box-shadow: var(--box-shadow-baseHover);
 		background-color: var(--color-primary-500);
 	}
-}
 
-.createButton:focus {
-	outline: 2px solid var(--color-neutral-0);
-	outline-offset: 2px;
-	background-color: var(--color-primary-500);
-}
-
-.sunButton {
-	box-shadow: 2px 2px 4px light-dark(rgba(var(--black), 0.5), transparent);
-	background-color: light-dark(var(--color-primary-400), transparent);
-	color: light-dark(#ffffff, #6c6c6c);
-}
-
-.moonButton {
-	box-shadow: 2px 2px 4px light-dark(transparent, rgba(var(--black), 0.5));
-	background-color: light-dark(transparent, var(--color-primary-400));
-	color: light-dark(#6c6c6c, #ffffff);
-}
-
-.sunButton,
-.moonButton {
-	--width: 32px;
-	outline: none;
-	border-radius: var(--border-radius-themeBtn);
-	padding: 4px;
-	width: var(--width);
-	height: var(--width);
-}
-
-@media (any-hover: hover) {
-	.sunButton:hover,
-	.moonButton:hover {
-		background-color: var(--color-neutral-0);
-		color: var(--color-base-black);
+	&:disabled {
+		opacity: 0.5;
+		box-shadow: var(--box-shadow-baseHover);
+		background-color: var(-color-primary-400);
 	}
-}
 
-.sunButton:focus,
-.moonButton:focus {
-	background-color: var(--color-neutral-0);
-	color: var(--color-base-black);
+	&:active {
+		background-color: var(--color-primary-300);
+	}
+
+	@media (any-hover: hover) {
+		&:not(&:active)&:hover {
+			box-shadow: var(--box-shadow-baseHover);
+			background-color: var(--color-primary-500);
+		}
+	}
 }

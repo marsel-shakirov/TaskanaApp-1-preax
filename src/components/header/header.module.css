@@ -5,7 +5,7 @@
 	align-items: center;
 	z-index: var(--z-index-header);
 	inset: 0;
-	box-shadow: var(--box-shadow-base);
+	box-shadow: 2px 2px 4px rgba(var(--black), 0.2);
 	background-color: var(--color-base-black);
 	padding-right: var(--padding-md);
 	padding-left: var(--padding-sm);

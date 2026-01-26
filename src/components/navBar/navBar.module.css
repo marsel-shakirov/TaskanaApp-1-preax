@@ -1,15 +1,10 @@
 .nav {
-	transition:
-		border-right var(--animate),
-		background-color var(--animate),
-		outline var(--animate);
-	border-right: 1px solid
-		light-dark(var(--color-neutral-300), var(--color-dark-300));
-	background-color: light-dark(var(--color-neutral-100), var(--color-dark-100));
+	border-right: 1px solid var(--color-neutral-300);
+	background-color: var(--color-neutral-100);
 	padding-inline: var(--padding-sm);
 	padding-block: var(--padding-md);
 	overflow-y: auto;
-	color: light-dark(var(--color-neutral-0), var(--color-dark-0));
+	color: var(--color-neutral-0);
 }
 
 .navList {
@@ -24,29 +19,26 @@
 	display: flex;
 	column-gap: 8px;
 	align-items: center;
-	transition: all var(--animate);
 	cursor: pointer;
 	box-shadow: var(--box-shadow-base);
 	border-radius: 8px;
-	background-color: light-dark(var(--color-neutral-800), var(--color-dark-800));
+	background-color: var(--color-neutral-800);
 	padding: 8px;
-	color: inherit;
+	color: var(--color-neutral-0);
 	font-weight: 600;
 	text-decoration: none;
-}
 
-.navLink:focus {
-	outline: 2px solid light-dark(var(--color-dark-0), var(--color-neutral-0));
-	outline-offset: 2px;
-	box-shadow: var(--box-shadow-baseHover);
-	background-color: light-dark(var(--color-neutral-700), var(--color-dark-700));
-}
-@media (any-hover: hover) {
-	.navLink:hover {
+	&:focus-visible {
+		outline: 2px solid var(--color-neutral-900);
+		outline-offset: 2px;
 		box-shadow: var(--box-shadow-baseHover);
-		background-color: light-dark(
-			var(--color-neutral-700),
-			var(--color-dark-700)
-		);
+		background-color: var(--color-neutral-700);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: var(--box-shadow-baseHover);
+			background-color: var(--color-neutral-700);
+		}
 	}
 }

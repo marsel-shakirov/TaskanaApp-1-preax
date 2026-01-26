@@ -2,7 +2,7 @@ import { ICON_NOTE } from '@/constants'
 
 import { Illustration } from '@/components/illustration/Illustration.jsx'
 
-import styles from './Statistic.module.css'
+import styles from './statistic.module.css'
 
 export const Statistic = () => {
 	return (
