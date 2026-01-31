@@ -11,9 +11,9 @@ export const LoadingIcon = ({ size, color, ...props }) => {
 		>
 			<path
 				stroke={color}
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="3"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth="3"
 				d="M12.07 6A6 6 0 1 0 18 12.07"
 			/>
 		</svg>

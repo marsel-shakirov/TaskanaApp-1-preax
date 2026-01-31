@@ -13,11 +13,6 @@
 
 * {
 	transition: all var(--animate) linear;
-	@media (prefers-reduced-motion: reduce) {
-		* {
-			transition: none;
-		}
-	}
 }
 
 body {

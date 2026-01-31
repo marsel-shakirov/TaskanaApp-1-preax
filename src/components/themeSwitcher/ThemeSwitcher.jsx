@@ -2,7 +2,7 @@ import { ICON_MOON, ICON_SUN } from '@/constants'
 
 import { useEffect, useState } from 'react'
 
-import { Button, Icon } from '@/components'
+import { Button } from '@/components'
 
 import styles from './themeSwitcher.module.css'
 
@@ -29,14 +29,17 @@ export const ThemeSwitcher = () => {
 
 	return (
 		<div className={styles.themeSwitcher}>
-			<Button onClick={handleSwitchTheme} className="themeButton">
-				<div className={styles.themeSun}>
-					<Icon name={ICON_SUN} width="24" height="24" />
-				</div>
-				<div className={styles.themeMoon}>
-					<Icon name={ICON_MOON} width="24" height="24" />
-				</div>
-				<span className="visually-hidden">Переключить на {nextTheme} тему</span>
+			<Button
+				onClick={handleSwitchTheme}
+				icons={[
+					{ name: ICON_SUN, className: 'sunIcon', size: '32' },
+					{ name: ICON_MOON, className: 'moonIcon', size: '32' },
+				]}
+				classes={['themeButton']}
+			>
+				<span className={`${styles.active} ${styles[theme]}`}>
+					Переключить на {nextTheme} тему
+				</span>
 			</Button>
 		</div>
 	)

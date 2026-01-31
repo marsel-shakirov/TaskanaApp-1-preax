@@ -5,13 +5,20 @@
 
 .themeButton {
 	display: inline-flex;
+	position: relative;
 	column-gap: 4px;
 	justify-content: center;
 	align-items: center;
 	box-shadow: var(--box-shadow-base);
 	border-radius: var(--border-radius-btn);
-	background-color: #262626;
+	background-color: transparent;
 	padding: 4px;
+
+	&:focus-visible {
+		outline: 2px solid var(--color-base-white);
+		outline-offset: 2px;
+		box-shadow: var(--box-shadow-baseHover);
+	}
 
 	@media (any-hover: hover) {
 		&:hover {
@@ -25,23 +32,30 @@
 	column-gap: var(--gap-xs);
 	justify-content: center;
 	align-items: center;
+	outline: none;
 	box-shadow: var(--box-shadow-base);
 	border-radius: var(--border-radius-btn);
 	background-color: var(--color-primary-400);
 	padding-right: var(--padding-sm);
 	padding-left: var(--padding-xs);
 	padding-block: var(--padding-xxs);
+	min-width: 118px;
 	color: var(--color-base-white);
 	font-weight: 600;
 
-	&:focus-visible {
+	&.loadingButton {
+		cursor: not-allowed;
+		background-color: var(--color-primary-300);
+	}
+
+	&:not(.loadingButton):focus-visible {
 		outline: 2px solid var(--color-base-white);
 		outline-offset: 2px;
 		box-shadow: var(--box-shadow-baseHover);
 		background-color: var(--color-primary-500);
 	}
 
-	&:disabled {
+	&:not(.loadingButton):disabled {
 		opacity: 0.5;
 		box-shadow: var(--box-shadow-baseHover);
 		background-color: var(-color-primary-400);
@@ -52,8 +66,7 @@
 	}
 
 	@media (any-hover: hover) {
-		&:not(&:active)&:hover {
-			box-shadow: var(--box-shadow-baseHover);
+		&:not(&:active, .loadingButton)&:hover {
 			background-color: var(--color-primary-500);
 		}
 	}

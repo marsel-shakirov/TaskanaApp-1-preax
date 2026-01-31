@@ -31,11 +31,19 @@
 	&:focus-visible {
 		outline: 2px solid var(--color-neutral-900);
 		outline-offset: 2px;
-		box-shadow: var(--box-shadow-baseHover);
+		box-shadow:
+			0 0 0 2px var(--color-neutral-100),
+			var(--box-shadow-baseHover);
 		background-color: var(--color-neutral-700);
 	}
 
 	@media (any-hover: hover) {
+		&:is(.navLink:focus-visible):hover {
+			box-shadow:
+				0 0 0 2px var(--color-neutral-100),
+				var(--box-shadow-baseHover);
+		}
+
 		&:hover {
 			box-shadow: var(--box-shadow-baseHover);
 			background-color: var(--color-neutral-700);

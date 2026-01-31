@@ -6,3 +6,31 @@
 .noteImage #noteBackground {
 	fill: var(--color-neutral-0);
 }
+
+.sunIcon,
+.moonIcon {
+	z-index: var(--z-index-themeIcon);
+	padding: 4px;
+}
+
+.sunIcon {
+	color: light-dark(var(--color-base-white), var(--color-base-600));
+}
+
+.moonIcon {
+	color: light-dark(var(--color-base-600), var(--color-base-white));
+}
+
+.loadingIcon {
+	transform: rotate(180deg);
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

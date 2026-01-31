@@ -1,39 +1,47 @@
 .themeSwitcher {
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-self: center;
 	border-radius: var(--border-radius-btn);
-	> button:focus-visible {
-		outline: 2px solid var(--color-base-white);
-		outline-offset: 2px;
-		box-shadow: var(--box-shadow-baseHover);
-	}
+	background-color: var(--color-base-800);
 }
-.themeSun,
-.themeMoon {
+
+.active {
+	position: absolute;
+	left: 0;
 	--width: 32px;
-	outline: none;
+	transition:
+		background-color var(--animate) linear,
+		transform var(--animate) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	cursor: pointer;
+	box-shadow: 2px 2px 4px rgba(var(--black), 0.5);
 	border-radius: var(--border-radius-themeBtn);
-	padding: 4px;
+	background-color: var(--color-primary-400);
 	width: var(--width);
 	height: var(--width);
+	overflow: hidden;
+	color: transparent;
+
+	&.light {
+		transform: translateX(4px);
+	}
+
+	&.dark {
+		transform: translateX(40px);
+	}
 }
 
-.themeSun {
-	box-shadow: 2px 2px 4px light-dark(rgba(var(--black), 0.5), transparent);
-	background-color: light-dark(var(--color-primary-400), transparent);
-	color: light-dark(var(--color-base-white), var(--color-base-600));
-}
-
-.themeMoon {
-	box-shadow: 2px 2px 4px light-dark(transparent, rgba(var(--black), 0.5));
-	background-color: light-dark(transparent, var(--color-primary-400));
-	color: light-dark(var(--color-base-600), var(--color-base-white));
-}
-
-:is(.themeSwitcher:hover, .themeSwitcher > button:focus-visible) .themeSun {
-	background-color: light-dark(var(--color-base-white), transparent);
+:is(.themeSwitcher:hover, .themeSwitcher button:focus-visible)
+	:where(.themeSwitcher svg):first-of-type {
 	color: light-dark(var(--color-base-900), var(--color-base-600));
 }
 
-:is(.themeSwitcher:hover, .themeSwitcher > button:focus-visible) .themeMoon {
-	background-color: light-dark(transparent, var(--color-base-white));
+:is(.themeSwitcher:hover, .themeSwitcher button:focus-visible)
+	:where(.themeSwitcher svg):last-of-type {
 	color: light-dark(var(--color-base-600), var(--color-base-900));
+}
+
+:is(.themeSwitcher:hover, .themeSwitcher button:focus-visible) .active {
+	background-color: var(--color-base-white);
 }

@@ -51,6 +51,7 @@
 	--gap-xs: 8px;
 
 	--z-index-title: 100;
+	--z-index-themeIcon: 200;
 	--z-index-titleBefore: -1;
 	--z-index-header: 1000;
 
