@@ -32,8 +32,8 @@ export const ThemeSwitcher = () => {
 			<Button
 				onClick={handleSwitchTheme}
 				icons={[
-					{ name: ICON_SUN, className: 'sunIcon', size: '32' },
-					{ name: ICON_MOON, className: 'moonIcon', size: '32' },
+					{ name: ICON_SUN, size: '32' },
+					{ name: ICON_MOON, size: '32' },
 				]}
 				classes={['themeButton']}
 			>

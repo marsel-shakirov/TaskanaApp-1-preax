@@ -5,6 +5,7 @@ import { Icon } from '@/components'
 import styles from './button.module.css'
 
 export const Button = ({
+	form = null,
 	disabled = false,
 	isLoading = false,
 	onClick,
@@ -39,6 +40,7 @@ export const Button = ({
 
 	return (
 		<button
+			form={form}
 			onClick={onClick}
 			type="button"
 			disabled={disabled || isLoading}
@@ -46,7 +48,7 @@ export const Button = ({
 			{...props}
 		>
 			{isLoading ? (
-				<Icon name={ICON_LOADING} className="loadingIcon" />
+				<Icon name={ICON_LOADING} />
 			) : (
 				<>
 					{renderIcons()}

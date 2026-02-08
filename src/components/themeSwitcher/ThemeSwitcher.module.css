@@ -3,8 +3,8 @@
 	position: relative;
 	align-items: center;
 	justify-self: center;
-	border-radius: var(--border-radius-btn);
-	background-color: var(--color-base-800);
+	border-radius: var(--border-radius-base);
+	background-color: var(--color-neutral-base800);
 }
 
 .active {
@@ -34,14 +34,14 @@
 
 :is(.themeSwitcher:hover, .themeSwitcher button:focus-visible)
 	:where(.themeSwitcher svg):first-of-type {
-	color: light-dark(var(--color-base-900), var(--color-base-600));
+	color: light-dark(var(--color-neutral-base900), var(--color-neutral-base600));
 }
 
 :is(.themeSwitcher:hover, .themeSwitcher button:focus-visible)
 	:where(.themeSwitcher svg):last-of-type {
-	color: light-dark(var(--color-base-600), var(--color-base-900));
+	color: light-dark(var(--color-neutral-base600), var(--color-neutral-base900));
 }
 
 :is(.themeSwitcher:hover, .themeSwitcher button:focus-visible) .active {
-	background-color: var(--color-base-white);
+	background-color: var(--color-neutral-baseWhite);
 }

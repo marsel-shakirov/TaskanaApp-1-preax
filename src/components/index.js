@@ -17,3 +17,5 @@ export { Content } from './content/Content'
 export { MainContainer } from './mainContainer/MainContainer'
 
 export { Icon } from './icon/Icon'
+
+export { TaskEditor } from './taskEditor/TaskEditor.jsx'

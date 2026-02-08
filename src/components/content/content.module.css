@@ -1,5 +1,7 @@
 .content {
 	display: grid;
+	position: relative;
 	grid-template-rows: calc(100vh - 64px);
 	grid-template-columns: 204px minmax(676px, 1fr) 400px;
+	overflow: hidden;
 }

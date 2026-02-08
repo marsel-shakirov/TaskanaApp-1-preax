@@ -11,3 +11,11 @@ export const ICON_LOADING = 'LoadingIcon'
 export const ICON_NOTE = 'NoteIllustration'
 
 export const ICON_TASK = 'TaskIllustration'
+
+export const ICON_CHEVRON = 'ChevronTopIcon'
+
+export const ICON_ARROW = 'ArrowTwoIcon'
+
+export const ICON_MINUS = 'MinusIcon'
+
+export const ICON_DELETE = 'DeleteIcon'

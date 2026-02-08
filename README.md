@@ -13,3 +13,14 @@ nickname - marsel-shakirov
 
 1. @trivago/prettier-plugin-sort-imports - плагин для сортировки импортов в удобном порядке [trivago/prettier](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 2. npm i prettier-plugin-css-order - плагин для сортировки css (по concentric-css) [CSS Order Prettier Plugin](https://www.npmjs.com/package/prettier-plugin-css-order)
+
+# Utils
+
+1. простая реализация clsx которая позволяет вам передавать имена классов в виде строк или объектов с условиями, а на выходе получать готовый css module
+
+```jsx
+		className={clsx(styles, 'button', { // обязательный первый параметр
+			active: isActive,
+			disabled: isDisabled, // Класс 'disabled' будет применен, если isDisabled === true
+		})}
+```

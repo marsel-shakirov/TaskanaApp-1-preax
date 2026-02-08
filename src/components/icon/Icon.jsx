@@ -14,5 +14,5 @@ export const Icon = ({ name, size = 24, color = 'currentColor', ...props }) => {
 		return null
 	}
 
-	return <IconComponent size={size} color={color} {...props} />
+	return <IconComponent className={name} size={size} color={color} {...props} />
 }

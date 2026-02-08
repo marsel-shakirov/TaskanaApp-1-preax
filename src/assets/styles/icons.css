@@ -1,29 +1,47 @@
-.taskImage #taskLine,
-.noteImage #noteStroke {
+.TaskIllustration #taskLine,
+.NoteIllustration #noteStroke {
 	fill: var(--color-neutral-300);
 }
 
-.noteImage #noteBackground {
+.NoteIllustration #noteBackground {
 	fill: var(--color-neutral-0);
 }
 
-.sunIcon,
-.moonIcon {
+.SunIcon,
+.MoonIcon {
 	z-index: var(--z-index-themeIcon);
 	padding: 4px;
 }
 
-.sunIcon {
-	color: light-dark(var(--color-base-white), var(--color-base-600));
+.SunIcon {
+	color: light-dark(
+		var(--color-neutral-baseWhite),
+		var(--color-neutral-base600)
+	);
 }
 
-.moonIcon {
-	color: light-dark(var(--color-base-600), var(--color-base-white));
+.MoonIcon {
+	color: light-dark(
+		var(--color-neutral-base600),
+		var(--color-neutral-baseWhite)
+	);
 }
 
-.loadingIcon {
+.LoadingIcon {
 	transform: rotate(180deg);
 	animation: spin 1s linear infinite;
+}
+
+.MinusIcon {
+	color: var(--color-neutral-600);
+}
+
+.ChevronTopIcon {
+	color: var(--color-secondary-400);
+}
+
+.ArrowTwoIcon {
+	color: var(--color-primary-400);
 }
 
 @keyframes spin {

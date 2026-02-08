@@ -3,19 +3,23 @@ import { ICON_PLUS } from '@/constants'
 
 import { useState } from 'react'
 
+import { useTasks } from '@/hooks/contexts/useTasks.jsx'
+
 import { Button, Logo } from '@/components'
 
 import styles from './header.module.css'
 
 export const Header = () => {
 	const [isLoading, setLoading] = useState(false)
+	const { setIsEditorTaskOpen } = useTasks()
 
 	const handleCreateTask = () => {
 		setLoading(true)
 		const timerId = setTimeout(() => {
 			setLoading(false)
+			setIsEditorTaskOpen(true)
 			clearTimeout(timerId)
-		}, 2000)
+		}, 1000)
 	}
 
 	return (

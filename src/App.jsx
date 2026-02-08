@@ -1,5 +1,11 @@
+import { TasksProvider } from './provider/TasksProvider'
+
 import { AppLayout } from '@/layouts'
 
 export const App = () => {
-	return <AppLayout />
+	return (
+		<TasksProvider>
+			<AppLayout />
+		</TasksProvider>
+	)
 }

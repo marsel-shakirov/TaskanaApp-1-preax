@@ -6,11 +6,11 @@
 	border-radius: 7px;
 	min-width: 126px;
 	height: 40px;
-	color: var(--color-base-white);
+	color: var(--color-neutral-baseWhite);
 	text-decoration: none;
 
 	&:focus-visible {
-		outline: 2px solid var(--color-base-white);
+		outline: 2px solid var(--color-neutral-baseWhite);
 		outline-offset: 6px;
 	}
 }
@@ -29,8 +29,8 @@
 		z-index: var(--z-index-titleBefore);
 		border-radius: 7px;
 		background: linear-gradient(
-			var(--color-primary-400),
-			var(--color-primary-500)
+			var(--color-primary-base400),
+			var(--color-primary-base500)
 		);
 		width: var(--size);
 		height: var(--size);

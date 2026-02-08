@@ -12,7 +12,10 @@
 }
 
 * {
-	transition: all var(--animate) linear;
+	transition:
+		color var(--animate) linear,
+		background-color var(--animate) linear,
+		border-color var(--animate) linear;
 }
 
 body {

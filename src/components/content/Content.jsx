@@ -1,3 +1,5 @@
+import { TaskEditor } from '../taskEditor/TaskEditor'
+
 import { IncomingTasks } from '@/pages'
 
 import { NavBar, SideBar } from '@/components'
@@ -10,6 +12,7 @@ export const Content = () => {
 			<NavBar />
 			<IncomingTasks />
 			<SideBar />
+			<TaskEditor />
 		</div>
 	)
 }

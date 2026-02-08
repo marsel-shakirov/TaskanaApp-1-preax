@@ -16,12 +16,7 @@ export const TaskList = () => {
 				</p>
 			</div>
 			<div className={styles.taskListImg}>
-				<Illustration
-					name={ICON_TASK}
-					width="463"
-					height="319"
-					className="taskImage"
-				/>
+				<Illustration name={ICON_TASK} width="463" height="319" />
 			</div>
 		</section>
 	)

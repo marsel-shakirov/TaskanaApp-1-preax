@@ -1,6 +1,13 @@
 .mainButton {
 	cursor: pointer;
 	border: none;
+	border-radius: var(--border-radius-base);
+
+	&.loadingButton {
+		display: flex;
+		justify-content: center;
+		cursor: not-allowed;
+	}
 }
 
 .themeButton {
@@ -10,12 +17,11 @@
 	justify-content: center;
 	align-items: center;
 	box-shadow: var(--box-shadow-base);
-	border-radius: var(--border-radius-btn);
 	background-color: transparent;
 	padding: 4px;
 
 	&:focus-visible {
-		outline: 2px solid var(--color-base-white);
+		outline: 2px solid var(--color-neutral-baseWhite);
 		outline-offset: 2px;
 		box-shadow: var(--box-shadow-baseHover);
 	}
@@ -34,40 +40,187 @@
 	align-items: center;
 	outline: none;
 	box-shadow: var(--box-shadow-base);
-	border-radius: var(--border-radius-btn);
-	background-color: var(--color-primary-400);
+	background-color: var(--color-primary-base400);
 	padding-right: var(--padding-sm);
 	padding-left: var(--padding-xs);
 	padding-block: var(--padding-xxs);
 	min-width: 118px;
-	color: var(--color-base-white);
+	color: var(--color-neutral-baseWhite);
 	font-weight: 600;
 
 	&.loadingButton {
-		cursor: not-allowed;
-		background-color: var(--color-primary-300);
+		background-color: var(--color-primary-base300);
 	}
 
 	&:not(.loadingButton):focus-visible {
-		outline: 2px solid var(--color-base-white);
+		outline: 2px solid var(--color-neutral-baseWhite);
 		outline-offset: 2px;
 		box-shadow: var(--box-shadow-baseHover);
-		background-color: var(--color-primary-500);
+		background-color: var(--color-primary-base500);
 	}
 
 	&:not(.loadingButton):disabled {
 		opacity: 0.5;
 		box-shadow: var(--box-shadow-baseHover);
-		background-color: var(-color-primary-400);
+		background-color: var(-color-primary-base400);
 	}
 
 	&:active {
-		background-color: var(--color-primary-300);
+		background-color: var(--color-primary-base300);
 	}
 
 	@media (any-hover: hover) {
 		&:not(&:active, .loadingButton)&:hover {
-			background-color: var(--color-primary-500);
+			box-shadow: var(--box-shadow-baseHover);
+			background-color: var(--color-primary-base500);
+		}
+	}
+}
+
+.resetFormInput {
+	display: flex;
+	position: absolute;
+	top: 52px;
+	right: 15px;
+	visibility: hidden;
+	outline: none;
+	background-color: transparent;
+	padding: 0;
+	color: var(--color-neutral-500);
+
+	&:focus-visible {
+		color: var(--color--neutral-800);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--color--neutral-800);
+		}
+	}
+}
+
+.priorityButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	padding: var(--padding-xxs);
+
+	&:focus-visible {
+		outline: 2px solid var(--color-neutral-900);
+		outline-offset: 2px;
+		box-shadow:
+			0 0 0 2px var(--color-neutral-100),
+			var(--box-shadow-smHover);
+	}
+
+	&:hover {
+		box-shadow: var(--box-shadow-smHover);
+	}
+
+	&.active {
+		box-shadow: var(--box-shadow-sm);
+	}
+
+	&.priorityMinus.active {
+		background-color: var(--color-neutral-200);
+	}
+
+	&.priorityChevron.active {
+		background-color: var(--color-secondary-0);
+	}
+
+	&.priorityArrow.active {
+		background-color: var(--color-primary-0);
+	}
+
+	&.priorityMinus:focus-visible {
+		background-color: var(--color-neutral-300);
+	}
+
+	&.priorityChevron:focus-visible {
+		background-color: var(--color-secondary-100);
+	}
+
+	&.priorityArrow:focus-visible {
+		background-color: var(--color-primary-100);
+	}
+
+	@media (any-hover: hover) {
+		&.priorityMinus:hover {
+			background-color: var(--color-neutral-300);
+		}
+
+		&.priorityChevron:hover {
+			background-color: var(--color-secondary-100);
+		}
+
+		&.priorityArrow:hover {
+			background-color: var(--color-primary-100);
+		}
+	}
+}
+
+.taskEditorButton {
+	padding-inline: var(--padding-sm);
+	padding-block: var(--padding-xs);
+	font-weight: 600;
+	font-size: var(--font-size-md);
+	line-height: 1.33;
+
+	&.taskSubmitButton {
+		box-shadow: var(--box-shadow-base);
+		background-color: var(--color-neutral-800);
+		color: var(--color-neutral-0);
+	}
+
+	&.taskResetButton {
+		box-shadow: var(--box-shadow-sm);
+		background-color: var(--color-neutral-200);
+		color: var(--color-neutral-800);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--color-neutral-900);
+		outline-offset: 2px;
+		box-shadow:
+			0 0 0 2px var(--color-neutral-100),
+			var(--box-shadow-baseHover);
+	}
+
+	&.taskSubmitButton:active,
+	&.taskSubmitButton.loadingButton {
+		background-color: var(--color-neutral-600);
+		min-width: 98px;
+	}
+
+	&.taskResetButton:active,
+	&.taskResetButton.loadingButton {
+		background-color: var(--color--neutral-100);
+		min-width: 94px;
+	}
+
+	&:not(&.loadingButton):disabled {
+		opacity: 0.5;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			&:is(&:focus-visible):hover {
+				box-shadow:
+					0 0 0 2px var(--color-neutral-100),
+					var(--box-shadow-baseHover);
+			}
+		}
+
+		&:not(&:active, .loadingButton)&.taskSubmitButton:hover {
+			box-shadow: var(--box-shadow-baseHover);
+			background-color: var(--color-neutral-700);
+		}
+
+		&:not(&:active, .loadingButton)&.taskResetButton:hover {
+			box-shadow: var(--box-shadow-smHover);
+			background-color: var(--color-neutral-300);
 		}
 	}
 }

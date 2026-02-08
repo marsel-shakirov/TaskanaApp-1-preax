@@ -19,5 +19,7 @@ export const Illustration = ({
 		return null
 	}
 
-	return <ImageComponent size={size} color={color} {...props} />
+	return (
+		<ImageComponent className={name} size={size} color={color} {...props} />
+	)
 }
