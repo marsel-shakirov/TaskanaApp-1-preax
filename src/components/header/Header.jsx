@@ -15,10 +15,9 @@ export const Header = () => {
 
 	const handleCreateTask = () => {
 		setLoading(true)
-		const timerId = setTimeout(() => {
+		setTimeout(() => {
 			setLoading(false)
 			setIsEditorTaskOpen(true)
-			clearTimeout(timerId)
 		}, 1000)
 	}
 
@@ -31,7 +30,7 @@ export const Header = () => {
 					isLoading={isLoading}
 					icons={[{ name: ICON_PLUS, color: '#fff' }]}
 					title="Создать"
-					classes={['createButton', isLoading ? 'loadingButton' : '']}
+					classes={['createButton']}
 				></Button>
 				<ThemeSwitcher />
 			</div>

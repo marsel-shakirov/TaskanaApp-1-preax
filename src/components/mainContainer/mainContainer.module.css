@@ -1,9 +1,12 @@
 .main {
+	flex-grow: 1;
+	min-height: calc(var(--header-height) + 88px);
 	overflow-y: auto;
 }
 
 .mainTitle {
 	position: sticky;
+	z-index: var(--z-index-title);
 	margin-inline: auto;
 	inset: 0;
 	background-color: var(--color-neutral-0);

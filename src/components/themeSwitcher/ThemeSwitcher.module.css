@@ -12,11 +12,11 @@
 	left: 0;
 	--width: 32px;
 	transition:
-		background-color var(--animate) linear,
-		transform var(--animate) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+		background-color var(--animate-base) linear,
+		transform var(--animate-base) cubic-bezier(0.68, -0.55, 0.27, 1.55);
 	cursor: pointer;
 	box-shadow: 2px 2px 4px rgba(var(--black), 0.5);
-	border-radius: var(--border-radius-themeBtn);
+	border-radius: var(--border-radius-second);
 	background-color: var(--color-primary-400);
 	width: var(--width);
 	height: var(--width);

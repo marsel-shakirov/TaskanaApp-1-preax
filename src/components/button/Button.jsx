@@ -1,12 +1,14 @@
 import { ICON_LOADING } from '@/constants'
 
+import { clsx } from '@/utils'
+
 import { Icon } from '@/components'
 
 import styles from './button.module.css'
 
 export const Button = ({
 	form = null,
-	disabled = false,
+	isDisabled = false,
 	isLoading = false,
 	onClick,
 	classes = [],
@@ -16,12 +18,6 @@ export const Button = ({
 	children = null,
 	...props
 }) => {
-	const classNames = classes
-		.filter(Boolean)
-		.map((element) => styles[element])
-		.filter(Boolean)
-		.join(' ')
-
 	const visuallyHidden = titleHidden ? 'visually-hidden' : ''
 
 	const renderIcons = () => {
@@ -43,8 +39,13 @@ export const Button = ({
 			form={form}
 			onClick={onClick}
 			type="button"
-			disabled={disabled || isLoading}
-			className={`${styles.mainButton} ${classNames}`}
+			disabled={isDisabled || isLoading}
+			className={clsx(
+				styles,
+				'mainButton',
+				isLoading && 'loadingButton',
+				...classes
+			)}
 			{...props}
 		>
 			{isLoading ? (

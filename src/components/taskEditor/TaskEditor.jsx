@@ -10,34 +10,42 @@ import { Button } from '@/components'
 
 import styles from './TaskEditor.module.css'
 
+const EDITOR_TASK_BUTTONS = [ICON_MINUS, ICON_CHEVRON, ICON_ARROW]
+
 export const TaskEditor = () => {
 	const { isEditorTaskOpen, setIsEditorTaskOpen } = useTasks()
+	const [isPriorityActive, setIsPrioryActive] = useState(0)
 
 	const [inputValue, setInputValue] = useState('')
 	const [isCloseTaskEditor, setIsCloseTaskEditor] = useState(false)
-	const [isCreateTask, setIsCreateTask] = useState(false)
+	const [isDisabledTaskButton, setIsDisabledTaskButton] = useState(true)
+	// const [isCreateTask, setIsCreateTask] = useState(false)
 	const formId = useId()
 	const inputRef = useRef(null)
 
 	const handleCloseTaskEditor = () => {
 		setIsCloseTaskEditor(true)
-		const timerId = setTimeout(() => {
+		setTimeout(() => {
 			setIsCloseTaskEditor(false)
 			setIsEditorTaskOpen(false)
-			clearTimeout(timerId)
-		}, 5000)
+		}, 1000)
 	}
-	const handleCreateTaskEditor = () => {
-		setIsCreateTask(true)
-		const timerId = setTimeout(() => {
-			setIsCreateTask(false)
-			clearTimeout(timerId)
-		}, 5000)
-	}
+	// const handleCreateTaskEditor = () => {
+	// 	setIsCreateTask(true)
+	// 	setTimeout(() => {
+	// 		setIsCreateTask(false)
+	// 	}, 1000)
+	// }
 
 	const handleChange = (event) => {
-		const target = event.target
-		setInputValue(target.value)
+		const value = event.target.value
+		const cleaned = value.trim()
+
+		if (cleaned !== '') {
+			setInputValue(value)
+		} else {
+			setInputValue('')
+		}
 	}
 
 	const handleReset = () => {
@@ -45,15 +53,29 @@ export const TaskEditor = () => {
 		setInputValue('')
 	}
 
+	const handlePriorityActive = (index) => {
+		setIsPrioryActive(index)
+	}
+
 	useEffect(() => {
 		const inputElement = inputRef.current
 
 		if (inputElement.value) {
 			inputElement.classList.add(`${styles['close-hidden']}`)
+			setIsDisabledTaskButton(false)
 		} else {
 			inputElement.classList.remove(`${styles['close-hidden']}`)
+			setIsDisabledTaskButton(true)
 		}
 	}, [inputValue])
+
+	useEffect(() => {
+		if (isEditorTaskOpen) {
+			setTimeout(() => inputRef.current.focus(), 400)
+		}
+		setIsPrioryActive(0)
+		setInputValue('')
+	}, [isEditorTaskOpen])
 
 	return (
 		<aside
@@ -65,9 +87,11 @@ export const TaskEditor = () => {
 				<div className={styles.taskHeader}>
 					<h2 className={styles.taskHeading}>Создание задачи</h2>
 					<form id={formId} action="" className={styles.formEditor}>
+						<span className={styles.formEditorHeading}>Название</span>
 						<label className={styles.formEditorLabel}>
-							<span className={styles.formEditorHeading}>Название</span>
+							<span className="visually-hidden">Название задачи</span>
 							<input
+								id="editor-input"
 								ref={inputRef}
 								onChange={handleChange}
 								name="create"
@@ -81,7 +105,7 @@ export const TaskEditor = () => {
 								type="button"
 								icons={[{ name: ICON_DELETE }]}
 								title="Очистить поле"
-								titleHidden="true"
+								titleHidden={true}
 								classes={['resetFormInput']}
 							/>
 						</label>
@@ -90,71 +114,39 @@ export const TaskEditor = () => {
 				<div className={styles.taskPriority}>
 					<div className={styles.taskPriorityInner}>
 						<h2 className={styles.priorityHeading}>Приоритет</h2>
-
-						<Button
-							icons={[{ name: ICON_MINUS }]}
-							title="Поставить приоритет задачи на один"
-							titleHidden="true"
-							classes={['priorityButton', 'priorityMinus', 'active']}
-						/>
-						<Button
-							icons={[{ name: ICON_CHEVRON }]}
-							title="Поставить приоритет задачи на два"
-							titleHidden="true"
-							classes={['priorityButton', 'priorityChevron']}
-						/>
-						<Button
-							icons={[{ name: ICON_ARROW }]}
-							title="Поставить приоритет задачи на три"
-							titleHidden="true"
-							classes={['priorityButton', 'priorityArrow']}
-						/>
-					</div>
-					<div className={styles.taskPriorityInner}>
-						<h2 className={styles.priorityHeading}>Приоритет</h2>
-
-						<Button
-							icons={[{ name: ICON_MINUS }]}
-							title="Поставить приоритет задачи на один"
-							titleHidden="true"
-							classes={['priorityButton', 'priorityMinus', 'active']}
-						/>
-						<Button
-							icons={[{ name: ICON_CHEVRON }]}
-							title="Поставить приоритет задачи на два"
-							titleHidden="true"
-							classes={['priorityButton', 'priorityChevron']}
-						/>
-						<Button
-							icons={[{ name: ICON_ARROW }]}
-							title="Поставить приоритет задачи на три"
-							titleHidden="true"
-							classes={['priorityButton', 'priorityArrow']}
-						/>
+						{EDITOR_TASK_BUTTONS.map((element, index) => {
+							return (
+								<Button
+									key={`${element}_${index}`}
+									onClick={() => handlePriorityActive(index)}
+									icons={[{ name: element }]}
+									title={`Поставить приоритет задачи на ${index}`}
+									titleHidden={true}
+									classes={[
+										'priorityButton',
+										`priority${element}`,
+										isPriorityActive === index ? 'active' : '',
+									]}
+								/>
+							)
+						})}
 					</div>
 				</div>
 			</div>
 			<div className={styles.taskFooter}>
 				<Button
-					onClick={handleCreateTaskEditor}
-					isLoading={isCreateTask}
+					// isLoading={isCreateTask}
+					isDisabled={isDisabledTaskButton}
 					form={formId}
-					type="button"
-					classes={[
-						'taskEditorButton',
-						'taskSubmitButton',
-						isCreateTask ? 'loadingButton' : '',
-					]}
+					type="submit"
+					classes={['taskEditorButton', 'taskSubmitButton']}
 					title="Создать"
 				/>
 				<Button
+					type="button"
 					onClick={handleCloseTaskEditor}
 					isLoading={isCloseTaskEditor}
-					classes={[
-						'taskEditorButton',
-						'taskResetButton',
-						isCloseTaskEditor ? 'loadingButton' : '',
-					]}
+					classes={['taskEditorButton', 'taskResetButton']}
 					title="Отмена"
 				/>
 			</div>

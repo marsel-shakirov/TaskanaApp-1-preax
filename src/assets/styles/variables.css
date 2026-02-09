@@ -1,4 +1,6 @@
 :root {
+	--header-height: 64px;
+
 	--font-family: 'Source Sans 3';
 
 	--font-size-xlg: 32px;
@@ -54,7 +56,7 @@
 	--padding-xxs: 8px;
 
 	--border-radius-base: 8px;
-	--border-radius-themeBtn: 4px;
+	--border-radius-second: 4px;
 
 	--gap-lg: 40px;
 	--gap-md: 26px;
@@ -62,6 +64,7 @@
 	--gap-sm: 16px;
 	--gap-xs: 8px;
 
+	--z-index-content: 10;
 	--z-index-title: 100;
 	--z-index-themeIcon: 200;
 	--z-index-titleBefore: -1;
@@ -73,7 +76,8 @@
 	--box-shadow-sm: 2px 2px 4px rgba(var(--black), 0.1);
 	--box-shadow-smHover: 2px 8px 12px rgba(var(--black), 0.2);
 
-	--animate: 0.2s;
+	--animate-base: 0.2s;
+	--animate-taskEditor: 0.4s;
 }
 
 [data-theme='dark'] {

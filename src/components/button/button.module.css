@@ -122,40 +122,40 @@
 		box-shadow: var(--box-shadow-sm);
 	}
 
-	&.priorityMinus.active {
+	&.priorityMinusIcon.active {
 		background-color: var(--color-neutral-200);
 	}
 
-	&.priorityChevron.active {
+	&.priorityChevronTopIcon.active {
 		background-color: var(--color-secondary-0);
 	}
 
-	&.priorityArrow.active {
+	&.priorityArrowTwoIcon.active {
 		background-color: var(--color-primary-0);
 	}
 
-	&.priorityMinus:focus-visible {
+	&.priorityMinusIcon:focus-visible {
 		background-color: var(--color-neutral-300);
 	}
 
-	&.priorityChevron:focus-visible {
+	&.priorityChevronTopIcon:focus-visible {
 		background-color: var(--color-secondary-100);
 	}
 
-	&.priorityArrow:focus-visible {
+	&.priorityArrowTwoIcon:focus-visible {
 		background-color: var(--color-primary-100);
 	}
 
 	@media (any-hover: hover) {
-		&.priorityMinus:hover {
+		&.priorityMinusIcon:hover {
 			background-color: var(--color-neutral-300);
 		}
 
-		&.priorityChevron:hover {
+		&.priorityChevronTopIcon:hover {
 			background-color: var(--color-secondary-100);
 		}
 
-		&.priorityArrow:hover {
+		&.priorityArrowTwoIcon:hover {
 			background-color: var(--color-primary-100);
 		}
 	}

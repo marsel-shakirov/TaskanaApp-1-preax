@@ -13,9 +13,14 @@
 
 * {
 	transition:
-		color var(--animate) linear,
-		background-color var(--animate) linear,
-		border-color var(--animate) linear;
+		color var(--animate-base) linear,
+		background-color var(--animate-base) linear,
+		border-color var(--animate-base) linear,
+		box-shadow var(--animate-base) linear,
+		outline var(--animate-base) linear,
+		visibility var(--animate-base) linear,
+		transform var(--animate-taskEditor) ease-in-out,
+		opacity var(--animate-taskEditor) ease-in-out;
 }
 
 body {

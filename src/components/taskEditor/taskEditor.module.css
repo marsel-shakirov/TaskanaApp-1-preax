@@ -5,9 +5,6 @@
 	flex-direction: column;
 	transform: translateX(100%);
 	visibility: hidden;
-	transition:
-		visibility var(--animate) ease-in-out,
-		transform var(--animate) ease-in-out;
 	border-left: 1px solid var(--color-neutral-300);
 	background-color: var(--color-neutral-100);
 	min-width: 400px;
@@ -16,13 +13,11 @@
 	&.taskEditorOpen {
 		transform: translateX(0);
 		visibility: visible;
-		transition:
-			visibility var(--animate) ease-in-out,
-			transform var(--animate) ease-in-out;
 	}
 
 	.taskEditorInner {
 		flex-grow: 1;
+		min-height: calc(var(--header-height) + 203px);
 		overflow-y: auto;
 	}
 	.taskHeader {
@@ -44,23 +39,26 @@
 }
 
 .formEditor {
+	display: flex;
 	position: relative;
+	row-gap: 12px;
+	flex-direction: column;
+
+	.formEditorHeading {
+		font-weight: 700;
+		font-size: var(--font-size-md);
+		line-height: 1.33;
+		&::after {
+			padding-left: 4px;
+			content: '*';
+			color: var(--color-primary-400);
+			font-weight: 400;
+		}
+	}
 	.formEditorLabel {
 		display: flex;
-		row-gap: 12px;
-		flex-direction: column;
-		.formEditorHeading {
-			font-weight: 700;
-			font-size: var(--font-size-md);
-			line-height: 1.33;
-			&::after {
-				padding-left: 4px;
-				content: '*';
-				color: var(--color-primary-400);
-				font-weight: 400;
-			}
-		}
 		.formEditorInput {
+			flex-grow: 1;
 			cursor: pointer;
 			outline: none;
 			border: 1px solid var(--color-neutral-400);
@@ -73,7 +71,6 @@
 			line-height: 1.2;
 
 			&:focus-visible {
-				transition: none;
 				outline: 2px solid var(--color-neutral-800);
 				border-color: transparent;
 			}
@@ -83,7 +80,7 @@
 			}
 
 			@media (any-hover: hover) {
-				&:hover {
+				&:not(&:focus-visible)&:hover {
 					border-color: var(--color-neutral-600);
 				}
 			}
