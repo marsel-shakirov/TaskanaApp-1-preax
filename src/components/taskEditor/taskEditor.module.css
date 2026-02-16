@@ -75,7 +75,7 @@
 				border-color: transparent;
 			}
 
-			&.close-hidden ~ button {
+			&.closeHidden ~ button {
 				visibility: visible;
 			}
 

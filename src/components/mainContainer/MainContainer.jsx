@@ -1,8 +1,12 @@
-import { TaskList } from '@/components'
+import { useTasks } from '@/hooks/contexts'
+
+import { TaskList, TaskOrganizationStatus } from '@/components'
 
 import styles from './MainContainer.module.css'
 
 export const MainContainer = () => {
+	const { tasks } = useTasks()
+
 	return (
 		<main className={styles.main}>
 			<h1 className="visually-hidden">
@@ -10,8 +14,7 @@ export const MainContainer = () => {
 			</h1>
 			<section className={styles.mainSection}>
 				<h2 className={styles.mainTitle}>Входящие</h2>
-				<TaskList />
-				{/* <TaskOrganizationStatus /> */}
+				{tasks.length === 0 ? <TaskOrganizationStatus /> : <TaskList />}
 			</section>
 		</main>
 	)

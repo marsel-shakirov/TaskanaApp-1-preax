@@ -5,7 +5,7 @@ export const DeleteIcon = ({ size, color, ...props }) => {
 			width={size}
 			height={size}
 			fill="none"
-			aria-label="true"
+			aria-hidden="true"
 			viewBox="0 0 24 24"
 			{...props}
 		>
