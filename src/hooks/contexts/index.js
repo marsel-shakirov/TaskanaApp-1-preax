@@ -1,1 +1,3 @@
-export { useTasks } from './UseTasks.jsx'
+export { useTasks } from './useTasks.jsx'
+
+export { useTheme } from './useTheme.jsx'

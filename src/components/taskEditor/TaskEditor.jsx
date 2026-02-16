@@ -16,20 +16,22 @@ export const TaskEditor = () => {
 	const { isEditorTaskOpen, setIsEditorTaskOpen, tasks, setTasks } = useTasks()
 
 	const inputRef = useRef(null)
-	const [inputFormValue, setInputFormValue] = useState('')
 
+	const [inputFormValue, setInputFormValue] = useState('')
 	const [priorityActive, setPriorityActive] = useState(0)
-	const [isCloseTaskEditor, setIsCloseTaskEditor] = useState(false)
-	const [isCreateTask, setIsCreateTask] = useState(false)
+	const [pendingAction, setPendingAction] = useState(null)
 
 	const formId = useId()
 
-	const handleCloseTaskEditor = () => {
-		setIsCloseTaskEditor(true)
-		setTimeout(() => {
-			setIsCloseTaskEditor(false)
-			setIsEditorTaskOpen(false)
-		}, 1000)
+	const createTask = () => {
+		const date = new Date()
+		return {
+			id: generateId(),
+			title: inputFormValue,
+			priority: priorityActive,
+			createAt: date.toISOString(),
+			updateAt: date.toISOString(),
+		}
 	}
 
 	const handleFormChange = (event) => {
@@ -52,23 +54,20 @@ export const TaskEditor = () => {
 		setPriorityActive(index)
 	}
 
-	const createTask = () => {
-		const date = new Date()
-		return {
-			id: generateId(),
-			title: inputFormValue,
-			priority: priorityActive,
-			createAt: date.toISOString(),
-			updateAt: date.toISOString(),
-		}
+	const handleCloseTaskEditor = () => {
+		setPendingAction('close')
+		setTimeout(() => {
+			setPendingAction(null)
+			setIsEditorTaskOpen(false)
+		}, 1000)
 	}
 
 	const handleCreateTasks = (event) => {
 		event.preventDefault()
-		setIsCreateTask(true)
+		setPendingAction('create')
 		setTimeout(() => {
 			setTasks([...tasks, createTask()].reverse())
-			setIsCreateTask(true)
+			setPendingAction(null)
 			setIsEditorTaskOpen(false)
 		}, 1000)
 	}
@@ -95,6 +94,7 @@ export const TaskEditor = () => {
 						<label className={styles.formEditorLabel}>
 							<span className="visually-hidden">Название задачи</span>
 							<input
+								disabled={!isEditorTaskOpen}
 								ref={inputRef}
 								onChange={handleFormChange}
 								name="title"
@@ -122,6 +122,7 @@ export const TaskEditor = () => {
 						{PRIORITY_ICONS.map((element, index) => {
 							return (
 								<Button
+									isDisabled={!isEditorTaskOpen}
 									key={`${element}_${index}`}
 									onClick={() => handlePriorityChange(index)}
 									icons={[{ name: element }]}
@@ -140,7 +141,7 @@ export const TaskEditor = () => {
 			</div>
 			<div className={styles.taskFooter}>
 				<Button
-					isLoading={isCreateTask}
+					isLoading={pendingAction === 'create'}
 					onClick={handleCreateTasks}
 					isDisabled={!inputFormValue}
 					form={formId}
@@ -149,9 +150,10 @@ export const TaskEditor = () => {
 					title="Создать"
 				/>
 				<Button
+					isDisabled={!isEditorTaskOpen}
 					type="button"
 					onClick={handleCloseTaskEditor}
-					isLoading={isCloseTaskEditor}
+					isLoading={pendingAction === 'close'}
 					classes={['taskEditorButton', 'taskResetButton']}
 					title="Отмена"
 				/>

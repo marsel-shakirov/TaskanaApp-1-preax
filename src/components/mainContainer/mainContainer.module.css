@@ -1,7 +1,16 @@
 .main {
+	display: flex;
 	flex-grow: 1;
+	flex-direction: column;
 	min-height: calc(var(--header-height) + 88px);
+	overflow-x: hidden;
 	overflow-y: auto;
+}
+
+.mainSection {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
 }
 
 .mainTitle {
@@ -11,7 +20,7 @@
 	inset: 0;
 	background-color: var(--color-neutral-0);
 	padding: var(--padding-md);
-	max-width: 996px;
+	min-width: 996px;
 	font-weight: 700;
 	font-size: var(--font-size-xlg);
 	line-height: 1.25;

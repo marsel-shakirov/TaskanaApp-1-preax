@@ -1,7 +1,9 @@
 .taskStatus {
 	display: flex;
 	row-gap: var(--gap-lg);
+	flex-grow: 1;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	padding-inline: var(--padding-md);
 	padding-bottom: var(--padding-md);
@@ -11,10 +13,8 @@
 	display: flex;
 	row-gap: var(--gap-sm);
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 }
-
 .taskStatusTitle {
 	font-weight: 700;
 	font-size: var(--font-size-lg);

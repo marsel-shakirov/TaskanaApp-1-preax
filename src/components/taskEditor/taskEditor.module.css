@@ -4,7 +4,7 @@
 	right: 0;
 	flex-direction: column;
 	transform: translateX(100%);
-	visibility: hidden;
+	opacity: 0;
 	border-left: 1px solid var(--color-neutral-300);
 	background-color: var(--color-neutral-100);
 	min-width: 400px;
@@ -12,7 +12,7 @@
 
 	&.taskEditorOpen {
 		transform: translateX(0);
-		visibility: visible;
+		opacity: 1;
 	}
 
 	.taskEditorInner {
@@ -20,6 +20,7 @@
 		min-height: calc(var(--header-height) + 203px);
 		overflow-y: auto;
 	}
+
 	.taskHeader {
 		display: flex;
 		position: sticky;
@@ -30,6 +31,7 @@
 		padding-inline: var(--padding-md);
 		padding-block: var(--padding-md);
 	}
+
 	.taskHeading {
 		color: var(--color-neutral-800);
 		font-weight: 700;
@@ -55,8 +57,10 @@
 			font-weight: 400;
 		}
 	}
+
 	.formEditorLabel {
 		display: flex;
+
 		.formEditorInput {
 			flex-grow: 1;
 			cursor: pointer;
@@ -80,7 +84,7 @@
 			}
 
 			@media (any-hover: hover) {
-				&:not(&:focus-visible)&:hover {
+				&:not(:focus-visible)&:hover {
 					border-color: var(--color-neutral-600);
 				}
 			}
@@ -93,14 +97,16 @@
 	column-gap: var(--gap-sm);
 	row-gap: var(--gap-xmd);
 	flex-direction: column;
-	padding-inline: var(--padding-md);
 	padding-top: 4px;
+	padding-inline: var(--padding-md);
 	padding-bottom: var(--padding-sm);
+
 	.taskPriorityInner {
 		display: flex;
 		column-gap: var(--gap-xs);
 		align-items: center;
 	}
+
 	.priorityHeading {
 		padding-right: var(--padding-xxs);
 		color: var(--color-neutral-800);
@@ -111,7 +117,7 @@
 
 .taskFooter {
 	display: flex;
-	column-gap: var(--gap-xmd);
+	column-gap: var(--gap-sm);
 	border-top: 1px solid var(--color-neutral-300);
 	padding-inline: var(--padding-md);
 	padding-block: var(--padding-sm);

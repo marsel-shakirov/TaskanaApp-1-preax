@@ -171,12 +171,14 @@
 	&.taskSubmitButton {
 		box-shadow: var(--box-shadow-base);
 		background-color: var(--color-neutral-800);
+		min-width: 98px;
 		color: var(--color-neutral-0);
 	}
 
 	&.taskResetButton {
 		box-shadow: var(--box-shadow-sm);
 		background-color: var(--color-neutral-200);
+		min-width: 94px;
 		color: var(--color-neutral-800);
 	}
 
@@ -191,13 +193,11 @@
 	&.taskSubmitButton:active,
 	&.taskSubmitButton.loadingButton {
 		background-color: var(--color-neutral-600);
-		min-width: 98px;
 	}
 
 	&.taskResetButton:active,
 	&.taskResetButton.loadingButton {
 		background-color: var(--color--neutral-100);
-		min-width: 94px;
 	}
 
 	&:not(&.loadingButton):disabled {
@@ -206,19 +206,19 @@
 
 	@media (any-hover: hover) {
 		&:hover {
-			&:is(&:focus-visible):hover {
+			&:is(:focus-visible):hover {
 				box-shadow:
 					0 0 0 2px var(--color-neutral-100),
 					var(--box-shadow-baseHover);
 			}
 		}
 
-		&:not(&:active, .loadingButton)&.taskSubmitButton:hover {
+		&:not(:active, .loadingButton)&.taskSubmitButton:hover {
 			box-shadow: var(--box-shadow-baseHover);
 			background-color: var(--color-neutral-700);
 		}
 
-		&:not(&:active, .loadingButton)&.taskResetButton:hover {
+		&:not(:active, .loadingButton)&.taskResetButton:hover {
 			box-shadow: var(--box-shadow-smHover);
 			background-color: var(--color-neutral-300);
 		}
