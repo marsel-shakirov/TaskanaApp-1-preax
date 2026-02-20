@@ -1,21 +1,13 @@
-export const ICON_INBOX = 'InboxIcon'
-
-export const ICON_PLUS = 'PlusIcon'
-
-export const ICON_SUN = 'SunIcon'
-
-export const ICON_MOON = 'MoonIcon'
-
-export const ICON_LOADING = 'LoadingIcon'
-
-export const ICON_NOTE = 'NoteIllustration'
-
-export const ICON_TASK = 'TaskIllustration'
-
-export const ICON_CHEVRON = 'ChevronTopIcon'
-
-export const ICON_ARROW = 'ArrowTwoIcon'
-
-export const ICON_MINUS = 'MinusIcon'
-
-export const ICON_DELETE = 'DeleteIcon'
+export const ICONS = {
+	INBOX: 'InboxIcon',
+	PLUS: 'PlusIcon',
+	SUN: 'SunIcon',
+	MOON: 'MoonIcon',
+	LOADING: 'LoadingIcon',
+	NOTE: 'NoteIllustration',
+	TASK: 'TaskIllustration',
+	CHEVRON: 'ChevronTopIcon',
+	ARROW: 'ArrowTwoIcon',
+	MINUS: 'MinusIcon',
+	DELETE: 'DeleteIcon',
+}

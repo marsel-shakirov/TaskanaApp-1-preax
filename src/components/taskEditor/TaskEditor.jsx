@@ -1,4 +1,4 @@
-import { ICON_ARROW, ICON_CHEVRON, ICON_DELETE, ICON_MINUS } from '@/constants'
+import { ICONS } from '@/constants'
 
 import { useEffect, useId, useRef, useState } from 'react'
 
@@ -10,7 +10,7 @@ import { Button } from '@/components'
 
 import styles from './TaskEditor.module.css'
 
-const PRIORITY_ICONS = [ICON_MINUS, ICON_CHEVRON, ICON_ARROW]
+const PRIORITY_ICONS = [ICONS.MINUS, ICONS.CHEVRON, ICONS.ARROW]
 
 export const TaskEditor = () => {
 	const { isEditorTaskOpen, setIsEditorTaskOpen, tasks, setTasks } = useTasks()
@@ -108,7 +108,7 @@ export const TaskEditor = () => {
 							<Button
 								onClick={handleFormReset}
 								type="button"
-								icons={[{ name: ICON_DELETE }]}
+								icons={[{ name: ICONS.DELETE }]}
 								title="Очистить поле"
 								titleHidden={true}
 								classes={['resetFormInput']}

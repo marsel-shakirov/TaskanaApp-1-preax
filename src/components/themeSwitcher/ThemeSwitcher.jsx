@@ -1,4 +1,4 @@
-import { ICON_MOON, ICON_SUN } from '@/constants'
+import { ICONS } from '@/constants'
 
 import { useTheme } from '@/hooks/contexts'
 
@@ -16,8 +16,8 @@ export const ThemeSwitcher = () => {
 			<Button
 				onClick={handleSwitchTheme}
 				icons={[
-					{ name: ICON_SUN, size: '32' },
-					{ name: ICON_MOON, size: '32' },
+					{ name: ICONS.SUN, size: '32' },
+					{ name: ICONS.MOON, size: '32' },
 				]}
 				classes={['themeButton']}
 			>

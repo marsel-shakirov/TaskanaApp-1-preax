@@ -1,4 +1,4 @@
-import { ICON_INBOX } from '@/constants'
+import { ICONS } from '@/constants'
 
 import { Icon } from '@/components'
 
@@ -10,7 +10,7 @@ export const NavBar = () => {
 			<ul className={styles.navList}>
 				<li className={styles.navItem}>
 					<a className={styles.navLink} href="#">
-						<Icon name={ICON_INBOX} />
+						<Icon name={ICONS.INBOX} />
 						<span className={styles.navLinkText}>Входящие</span>
 					</a>
 				</li>

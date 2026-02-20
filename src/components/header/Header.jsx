@@ -1,5 +1,5 @@
 import { ThemeSwitcher } from '../themeSwitcher/ThemeSwitcher'
-import { ICON_PLUS } from '@/constants'
+import { ICONS } from '@/constants'
 
 import { useState } from 'react'
 
@@ -28,7 +28,7 @@ export const Header = () => {
 				<Button
 					onClick={handleCreateTask}
 					isLoading={isLoading}
-					icons={[{ name: ICON_PLUS, color: '#fff' }]}
+					icons={[{ name: ICONS.PLUS, color: '#fff' }]}
 					title="Создать"
 					classes={['createButton']}
 				></Button>

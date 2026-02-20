@@ -1,4 +1,4 @@
-import { ICON_LOADING } from '@/constants'
+import { ICONS } from '@/constants'
 
 import { clsx } from '@/utils'
 
@@ -49,7 +49,7 @@ export const Button = ({
 			{...props}
 		>
 			{isLoading ? (
-				<Icon name={ICON_LOADING} />
+				<Icon name={ICONS.LOADING} />
 			) : (
 				<>
 					{renderIcons()}

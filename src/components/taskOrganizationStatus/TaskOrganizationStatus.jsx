@@ -1,4 +1,4 @@
-import { ICON_TASK } from '@/constants'
+import { ICONS } from '@/constants'
 
 import { Illustration } from '@/components/illustration/Illustration.jsx'
 
@@ -16,7 +16,7 @@ export const TaskOrganizationStatus = () => {
 				</p>
 			</div>
 			<div className={styles.taskStatusImg}>
-				<Illustration name={ICON_TASK} width="463" height="319" />
+				<Illustration name={ICONS.TASK} width="463" height="319" />
 			</div>
 		</div>
 	)
