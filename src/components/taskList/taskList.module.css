@@ -3,8 +3,7 @@
 	row-gap: var(--gap-xs);
 	flex-direction: column;
 	padding-top: 5px;
-	padding-inline: var(--padding-sm);
-	padding-bottom: var(--padding-sm);
+	padding-inline: var(--padding-md);
 }
 
 .taskItem {
@@ -27,6 +26,7 @@
 }
 
 .taskItemWrap {
+	display: flex;
 	position: relative;
 	padding-block: var(--padding-xxs);
 }

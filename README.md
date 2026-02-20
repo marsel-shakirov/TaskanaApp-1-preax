@@ -19,7 +19,8 @@ nickname - marsel-shakirov
 1. простая реализация clsx которая позволяет вам передавать имена классов в виде строк или объектов с условиями, а на выходе получать готовый css module
 
 ```jsx
-		className={clsx(styles, 'button', { // обязательный первый параметр
+		className={clsx(styles, // обязательный первый параметр
+		 'button', {
 			active: isActive,
 			disabled: isDisabled, // Класс 'disabled' будет применен, если isDisabled === true
 		})}
