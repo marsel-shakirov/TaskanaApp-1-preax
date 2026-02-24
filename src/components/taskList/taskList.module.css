@@ -67,9 +67,8 @@
 	.checkmark {
 		--width: 20px;
 		position: absolute;
-		top: 50%;
+		top: calc(var(--padding-xxs) + 2px);
 		left: 0;
-		transform: translateY(-50%);
 		cursor: pointer;
 		border-radius: var(--border-radius-second);
 		background-color: var(--color-neutral-0);

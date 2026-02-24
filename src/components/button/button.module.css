@@ -40,7 +40,6 @@
 	column-gap: var(--gap-xs);
 	justify-content: center;
 	align-items: center;
-
 	box-shadow: var(--box-shadow-base);
 	background-color: var(--color-primary-base400);
 	padding-right: var(--padding-sm);
