@@ -4,7 +4,7 @@ import { Button } from '@/components'
 
 import styles from './prioritySelector.module.css'
 
-const PRIORITY_ICONS = [ICONS.MINUS, ICONS.CHEVRON, ICONS.ARROW]
+const PRIORITY_ICONS = [ICONS.MINUS, ICONS.CHEVRON_TOP, ICONS.ARROW]
 
 export const PrioritySelector = ({
 	isEditorTaskOpen,

@@ -1,5 +1,6 @@
 :root {
 	--header-height: 64px;
+	--min-dropdownWidth: 211px;
 
 	--font-family: 'Source Sans 3';
 
@@ -63,12 +64,16 @@
 	--gap-xmd: 24px;
 	--gap-sm: 16px;
 	--gap-xs: 8px;
+	--gap-xxs: 4px;
 
 	--z-index-content: 10;
 	--z-index-title: 100;
 	--z-index-themeIcon: 200;
+	--z-index-dropdown: 300;
 	--z-index-titleBefore: -1;
 	--z-index-header: 1000;
+
+	--box-shadow-lg: 0 0 12px 4px rgba(var(--black), 0.1);
 
 	--box-shadow-base: 2px 2px 4px rgba(var(--black), 0.2);
 	--box-shadow-baseHover: 2px 8px 12px rgba(var(--black), 0.25);
@@ -105,6 +110,8 @@
 	--color-secondary-300: #7d45ea;
 	--color-secondary-400: #9d6aff;
 	--color-secondary-500: #b792ff;
+
+	--box-shadow-lg: 0 0 16px 8px rgba(var(--black), 0.4);
 
 	--box-shadow-base: 2px 2px 4px rgba(var(--black), 0.5);
 	--box-shadow-baseHover: 2px 8px 12px rgba(var(--black), 0.8);

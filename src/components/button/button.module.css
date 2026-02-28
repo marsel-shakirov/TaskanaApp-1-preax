@@ -223,3 +223,50 @@
 		}
 	}
 }
+
+.dialogButton {
+	display: flex;
+	column-gap: var(--gap-xs);
+	justify-content: center;
+	align-items: center;
+	box-shadow: var(--box-shadow-sm);
+	background-color: var(--color-neutral-200);
+	padding-inline: var(--padding-xs) var(--padding-xxs);
+	padding-block: var(--padding-xxs);
+	min-width: var(--min-dropdownWidth);
+	color: inherit;
+	font-weight: 600;
+
+	&:focus-visible {
+		outline-color: var(--color-neutral-900);
+		box-shadow:
+			0 0 0 2px var(--color-neutral-100),
+			var(--box-shadow-smHover);
+		color: var(--color-neutral-800);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: var(--box-shadow-smHover);
+			color: var(--color-neutral-800);
+		}
+	}
+}
+
+.dropdownButton {
+	display: flex;
+	column-gap: var(--gap-xs);
+	flex-grow: 1;
+	background-color: transparent;
+	padding: var(--padding-xxs);
+	text-align: start;
+
+	span {
+		flex-grow: 1;
+	}
+
+	&:focus-visible {
+		outline-color: var(--color-neutral-900);
+		background-color: var(--color-neutral-200);
+	}
+}

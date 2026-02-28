@@ -27,3 +27,5 @@ export { TaskEditor } from './taskEditor/TaskEditor.jsx'
 export { PrioritySelector } from './prioritySelector/PrioritySelector.jsx'
 
 export { EditorInput } from './editorInput/EditorInput.jsx'
+
+export { Dropdown } from './dropdown/Dropdown.jsx'

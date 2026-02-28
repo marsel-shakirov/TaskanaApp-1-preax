@@ -1,5 +1,6 @@
 .main {
 	display: flex;
+	position: relative;
 	flex-grow: 1;
 	flex-direction: column;
 	align-items: center;
@@ -17,12 +18,15 @@
 }
 
 .mainTitle {
+	font-weight: 700;
+	font-size: var(--font-size-xlg);
+	line-height: 1.25;
+}
+
+.mainTitleContainer {
 	position: sticky;
 	z-index: var(--z-index-title);
 	inset: 0;
 	background-color: var(--color-neutral-0);
 	padding: var(--padding-md);
-	font-weight: 700;
-	font-size: var(--font-size-xlg);
-	line-height: 1.25;
 }

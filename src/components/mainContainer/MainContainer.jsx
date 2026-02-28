@@ -1,3 +1,5 @@
+import { Dropdown } from '../dropdown/Dropdown'
+
 import { useTasks } from '@/contexts'
 
 import { TaskList, TaskOrganizationStatus } from '@/components'
@@ -13,7 +15,11 @@ export const MainContainer = () => {
 				Taskana — ваш персональный планировщик задач
 			</h1>
 			<section className={styles.mainSection}>
-				<h2 className={styles.mainTitle}>Входящие</h2>
+				<div className={styles.mainTitleContainer}>
+					<h2 className={styles.mainTitle}>Входящие</h2>
+					{/* {tasks.length === 0 ? null : <Dropdown />} */}
+					<Dropdown />
+				</div>
 				{tasks.length === 0 ? <TaskOrganizationStatus /> : <TaskList />}
 			</section>
 		</main>

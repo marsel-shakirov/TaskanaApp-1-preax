@@ -1,6 +1,6 @@
-import { ICONS } from '@/constants'
-
 import { clsx } from '@/utils'
+
+import { ICONS } from '@/constants'
 
 import { Icon } from '@/components'
 

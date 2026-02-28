@@ -44,6 +44,14 @@
 	color: var(--color-primary-400);
 }
 
+.ChevronDownIcon {
+	order: 3;
+}
+
+.CheckIcon {
+	order: 3;
+}
+
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
