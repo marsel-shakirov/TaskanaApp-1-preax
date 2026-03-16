@@ -1,11 +1,12 @@
 import { useState } from 'react'
 
-import { useTasks } from '@/contexts'
+import { useEditor, useTasks } from '@/contexts'
 
 import { createTask, generateId } from '@/utils'
 
 export const useTaskEditorActions = (delay = 1000) => {
-	const { tasks, setTasks, setIsEditorTaskOpen } = useTasks()
+	const { tasks, setTasks } = useTasks()
+	const { setEditorMode, setEditingTaskIndex } = useEditor()
 	const [pendingAction, setPendingAction] = useState(null)
 
 	const createTaskWithDelay = (title, priority) => {
@@ -14,7 +15,7 @@ export const useTaskEditorActions = (delay = 1000) => {
 		setTimeout(() => {
 			setTasks([createTask(generateId, title, priority), ...tasks])
 			setPendingAction(null)
-			setIsEditorTaskOpen(false)
+			setEditorMode(null)
 		}, delay)
 	}
 
@@ -22,16 +23,17 @@ export const useTaskEditorActions = (delay = 1000) => {
 		setPendingAction('close')
 		setTimeout(() => {
 			setPendingAction(null)
-			setIsEditorTaskOpen(false)
+			setEditorMode(null)
 		}, delay)
 	}
 
-	const openEditorWithDelay = () => {
+	const openEditorWithDelay = (editor = 'create', index) => {
 		if (pendingAction) return
 		setPendingAction('create')
 		setTimeout(() => {
 			setPendingAction(null)
-			setIsEditorTaskOpen(true)
+			setEditorMode(editor)
+			setEditingTaskIndex(index)
 		}, delay)
 	}
 

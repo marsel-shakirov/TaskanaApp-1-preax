@@ -162,6 +162,8 @@
 }
 
 .taskEditorButton {
+	display: inline-flex;
+	align-items: center;
 	padding-inline: var(--padding-sm);
 	padding-block: var(--padding-xs);
 	font-weight: 600;
@@ -180,6 +182,14 @@
 		background-color: var(--color-neutral-200);
 		min-width: 94px;
 		color: var(--color-neutral-800);
+	}
+
+	&.taskEditButton {
+		margin-left: auto;
+		box-shadow: var(--box-shadow-sm);
+		background-color: var(--color-neutral-200);
+		padding-inline: var(--padding-xs);
+		color: var(--color-primary-400);
 	}
 
 	&:focus-visible {
@@ -217,7 +227,7 @@
 			background-color: var(--color-neutral-700);
 		}
 
-		&:not(:active, .loadingButton)&.taskResetButton:hover {
+		&:not(:active, .loadingButton):is(.taskResetButton, .taskEditButton):hover {
 			box-shadow: var(--box-shadow-smHover);
 			background-color: var(--color-neutral-300);
 		}

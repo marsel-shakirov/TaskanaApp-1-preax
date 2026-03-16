@@ -1,13 +1,15 @@
-import { TasksProvider, ThemeProvider } from './contexts'
+import { EditorProvider, TasksProvider, ThemeProvider } from './contexts'
 
 import { AppLayout } from '@/layouts'
 
 export const App = () => {
 	return (
 		<ThemeProvider>
-			<TasksProvider>
-				<AppLayout />
-			</TasksProvider>
+			<EditorProvider>
+				<TasksProvider>
+					<AppLayout />
+				</TasksProvider>
+			</EditorProvider>
 		</ThemeProvider>
 	)
 }

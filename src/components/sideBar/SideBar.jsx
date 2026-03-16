@@ -7,11 +7,11 @@ import { clsx } from '@/utils'
 import styles from './sideBar.module.css'
 
 export const SideBar = () => {
-	const { isEditorTaskOpen } = useTasks()
+	const { isTaskEditorOpen } = useTasks()
 
 	return (
 		<aside
-			className={clsx(styles, 'sideBar', { sideBarHidden: isEditorTaskOpen })}
+			className={clsx(styles, 'sideBar', { sideBarHidden: isTaskEditorOpen })}
 		>
 			<Statistic />
 		</aside>

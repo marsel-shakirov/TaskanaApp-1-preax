@@ -7,7 +7,7 @@ import { Button } from '@/components'
 import styles from './editorInput.module.css'
 
 export const EditorInput = ({
-	isEditorTaskOpen,
+	isTaskEditorOpen,
 	inputRef,
 	onChange,
 	value,
@@ -21,7 +21,7 @@ export const EditorInput = ({
 				<label className={styles.inputLabel}>
 					<span className="visually-hidden">Название задачи</span>
 					<input
-						disabled={!isEditorTaskOpen}
+						disabled={!isTaskEditorOpen}
 						ref={inputRef}
 						onChange={onChange}
 						name="title"

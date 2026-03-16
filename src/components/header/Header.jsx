@@ -14,7 +14,7 @@ export const Header = () => {
 			<Logo />
 			<div className={styles.headerInner}>
 				<Button
-					onClick={openEditorWithDelay}
+					onClick={() => openEditorWithDelay('create')}
 					isLoading={pendingAction}
 					icons={[{ name: ICONS.PLUS, color: '#fff' }]}
 					title="Создать"

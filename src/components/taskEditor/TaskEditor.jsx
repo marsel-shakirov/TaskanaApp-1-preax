@@ -1,26 +1,32 @@
 import { useEffect, useId, useRef, useState } from 'react'
 
-import { useTasks } from '@/contexts'
+import { useEditor, useTasks } from '@/contexts'
 
 import { useAutoFocus, useTaskEditorActions } from '@/hooks'
 
 import { clsx } from '@/utils'
+
+import { ICONS } from '@/constants'
 
 import { Button, EditorInput, PrioritySelector } from '@/components'
 
 import styles from './TaskEditor.module.css'
 
 export const TaskEditor = () => {
-	const { isEditorTaskOpen } = useTasks()
+	const { tasks } = useTasks()
+	const { editorMode, editingTaskIndex } = useEditor()
+
 	const { pendingAction, createTaskWithDelay, closeEditorWithDelay } =
 		useTaskEditorActions(1000)
-
-	const inputRef = useRef(null)
-
 	const [inputFormValue, setInputFormValue] = useState('')
 	const [priorityActive, setPriorityActive] = useState(0)
 
+	const inputRef = useRef(null)
 	const formId = useId()
+
+	const isTaskEditorOpen = editorMode !== null
+	const isEditMode = editorMode === 'edit'
+	const isCreateMode = editorMode === 'create'
 
 	const handleFormChange = (event) => {
 		const value = event.target.value
@@ -52,32 +58,46 @@ export const TaskEditor = () => {
 		createTaskWithDelay(inputFormValue, priorityActive)
 	}
 
-	useAutoFocus(inputRef, isEditorTaskOpen, 400)
+	useAutoFocus(inputRef, isTaskEditorOpen, 400)
 
 	useEffect(() => {
-		if (isEditorTaskOpen) {
+		if (isCreateMode) {
 			setPriorityActive(0)
 			setInputFormValue('')
+			return
 		}
-	}, [isEditorTaskOpen])
+
+		if (isEditMode) {
+			const task = tasks?.[editingTaskIndex]
+			if (!task) return
+
+			setPriorityActive(task.priority)
+			setInputFormValue(task.title)
+		}
+	}, [isCreateMode, isEditMode, tasks, editingTaskIndex])
 
 	return (
 		<aside
 			className={clsx(styles, 'taskEditor', {
-				taskEditorOpen: isEditorTaskOpen,
+				taskEditorOpen: isTaskEditorOpen,
 			})}
 		>
-			<form id={formId} action="" className={styles.taskEditorForm}>
+			<form
+				onSubmit={handleCreateTasks}
+				id={formId}
+				action=""
+				className={styles.taskEditorForm}
+			>
 				<EditorInput
 					formId={formId}
-					isEditorTaskOpen={isEditorTaskOpen}
+					isTaskEditorOpen={isTaskEditorOpen}
 					inputRef={inputRef}
 					onChange={handleFormChange}
 					onClick={handleFormReset}
 					value={inputFormValue}
 				/>
 				<PrioritySelector
-					isEditorTaskOpen={isEditorTaskOpen}
+					isTaskEditorOpen={isTaskEditorOpen}
 					onClick={handlePriorityChange}
 					priorityActive={priorityActive}
 				/>
@@ -85,21 +105,26 @@ export const TaskEditor = () => {
 			<div className={styles.taskFooter}>
 				<Button
 					isLoading={pendingAction === 'create'}
-					onClick={handleCreateTasks}
 					isDisabled={!inputFormValue}
 					form={formId}
 					type="submit"
 					classes={['taskEditorButton', 'taskSubmitButton']}
-					title="Создать"
+					title={isEditMode ? 'Сохранить' : 'Создать'}
 				/>
 				<Button
-					isDisabled={!isEditorTaskOpen}
-					type="button"
 					onClick={handleCloseTaskEditor}
+					isDisabled={!isTaskEditorOpen}
+					type="button"
 					isLoading={pendingAction === 'close'}
 					classes={['taskEditorButton', 'taskResetButton']}
 					title="Отмена"
 				/>
+				{isTaskEditorOpen === 'edit' && (
+					<Button
+						icons={[{ name: ICONS.EDIT }]}
+						classes={['taskEditorButton', 'taskEditButton']}
+					/>
+				)}
 			</div>
 		</aside>
 	)

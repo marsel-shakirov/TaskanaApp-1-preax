@@ -14,7 +14,7 @@ const PRIORITY_STYLE = {
 	2: 'checkmarkThird',
 }
 
-export const TaskItem = ({ title, priority }) => {
+export const TaskItem = ({ title, priority, taskIndex }) => {
 	const { pendingAction, openEditorWithDelay } = useTaskEditorActions(1000)
 
 	return (
@@ -30,7 +30,7 @@ export const TaskItem = ({ title, priority }) => {
 			</div>
 
 			<Button
-				onClick={openEditorWithDelay}
+				onClick={() => openEditorWithDelay('edit', taskIndex)}
 				isLoading={pendingAction}
 				icons={[{ name: ICONS.EDIT }]}
 				classes={['buttonEditTask']}
