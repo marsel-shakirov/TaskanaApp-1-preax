@@ -60,7 +60,10 @@ export const Dropdown = () => {
 	return (
 		<div className={clsx(styles, 'dropdown', { open: isDialogOpen })}>
 			<Button
-				icons={[{ name: ICONS.CREATE_DOWN }, { name: ICONS.CHEVRON_DOWN }]}
+				icons={[
+					{ name: DROPDOWN_ICONS[filterSelected].name },
+					{ name: ICONS.CHEVRON_DOWN },
+				]}
 				title={`По ${dialogButtonTitle.toLowerCase()}`}
 				classes={['dialogButton']}
 				onClick={handleToggleDialog}
