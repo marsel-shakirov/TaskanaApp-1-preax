@@ -31,7 +31,7 @@ export const useTaskEditorActions = (delay = 1000) => {
 			setTasks((prevTasks) =>
 				prevTasks.map((task) =>
 					task.id === id
-						? { ...task, title, priority, updateAt: new Date().toISOString() }
+						? { ...task, title, priority, updatedAt: new Date().toISOString() }
 						: task
 				)
 			)

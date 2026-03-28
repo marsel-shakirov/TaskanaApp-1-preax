@@ -6,7 +6,7 @@ export const App = () => {
 	return (
 		<ThemeProvider>
 			<EditorProvider>
-				<TasksProvider>
+				<TasksProvider isMockData={true}>
 					<AppLayout />
 				</TasksProvider>
 			</EditorProvider>

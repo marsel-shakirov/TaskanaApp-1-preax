@@ -1,11 +1,19 @@
 import { TasksContext } from './TasksContext.jsx'
+import { tasksData } from '@/mocks/tasks.mock.js'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-export const TasksProvider = ({ children }) => {
+export const TasksProvider = ({ children, isMockData }) => {
 	const [filterSelected, setFilterSelected] = useState(4)
 	const [tasks, setTasks] = useState([])
 
+	useEffect(() => {
+		if (isMockData) {
+			setTasks(tasksData)
+		}
+	}, [isMockData])
+
+	console.log(tasks)
 	return (
 		<TasksContext
 			value={{

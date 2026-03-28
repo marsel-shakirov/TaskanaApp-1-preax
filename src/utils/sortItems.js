@@ -1,16 +1,16 @@
-const sortByCreateAt = (items, order) => {
+const sortByCreatedAt = (items, order) => {
 	return [...items].sort((a, b) => {
-		const dateA = new Date(a.createAt)
-		const dateB = new Date(b.createAt)
+		const dateA = new Date(a.createdAt)
+		const dateB = new Date(b.createdAt)
 
 		return order === 'asc' ? dateA - dateB : dateB - dateA
 	})
 }
 
-const sortByUpdateAt = (items, order) => {
+const sortByUpdatedAt = (items, order) => {
 	return [...items].sort((a, b) => {
-		const dateA = new Date(a.updateAt)
-		const dateB = new Date(b.updateAt)
+		const dateA = new Date(a.updatedAt)
+		const dateB = new Date(b.updatedAt)
 
 		return order === 'asc' ? dateA - dateB : dateB - dateA
 	})
@@ -52,11 +52,11 @@ export const sortItems = (items, index, dropdownData) => {
 		case 'priority':
 			return sortByPriority(items, sortOrder)
 		case 'create':
-			return sortByCreateAt(items, sortOrder)
+			return sortByCreatedAt(items, sortOrder)
 		case 'alphabet':
 			return sortByAlphabet(items, sortOrder)
 		case 'update':
-			return sortByUpdateAt(items, sortOrder)
+			return sortByUpdatedAt(items, sortOrder)
 		default:
 			return [...items]
 	}

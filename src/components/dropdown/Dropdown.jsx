@@ -1,12 +1,10 @@
-import { DROPDOWN_ICONS } from '@/mock/data'
-
 import { useEffect, useRef, useState } from 'react'
 
 import { useTasks } from '@/contexts'
 
 import { clsx } from '@/utils'
 
-import { ICONS } from '@/constants'
+import { DROPDOWN_ICONS, ICONS } from '@/constants'
 
 import { Button, Icon } from '@/components'
 

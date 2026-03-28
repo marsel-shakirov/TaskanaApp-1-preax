@@ -39,7 +39,7 @@ export const TaskEditor = () => {
 		deleteTask,
 		closeEditorWithDelay,
 		updateTaskWithDelay,
-	} = useTaskEditorActions(1000)
+	} = useTaskEditorActions(500)
 
 	const isSubmitDisabled = isEditMode ? !isValid || !isDirty : !isValid
 

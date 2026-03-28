@@ -7,7 +7,7 @@ import { Button, Logo, ThemeSwitcher } from '@/components'
 import styles from './header.module.css'
 
 export const Header = () => {
-	const { pendingAction, openEditorWithDelay } = useTaskEditorActions(1000)
+	const { pendingAction, openEditorWithDelay } = useTaskEditorActions(500)
 
 	return (
 		<header className={styles.header}>

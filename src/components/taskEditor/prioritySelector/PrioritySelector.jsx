@@ -16,18 +16,20 @@ export const PrioritySelector = ({
 			<div className={styles.priorityInner}>
 				<h2 className={styles.priorityHeading}>Приоритет</h2>
 				{PRIORITY_ICONS.map((element, index) => {
+					const priorityIndex = index + 1
+
 					return (
 						<Button
 							isDisabled={!isTaskEditorOpen}
 							key={`${element}_${index}`}
-							onClick={() => onClick(index)}
+							onClick={() => onClick(priorityIndex)}
 							icons={[{ name: element }]}
-							title={`Поставить приоритет задачи на ${index}`}
+							title={`Поставить приоритет задачи на ${priorityIndex}`}
 							titleHidden={true}
 							classes={[
 								'priorityButton',
 								`priority${element}`,
-								priorityActive === index ? 'active' : '',
+								priorityActive === priorityIndex ? 'active' : '',
 							]}
 						/>
 					)

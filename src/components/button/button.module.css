@@ -295,6 +295,7 @@
 	color: var(--color-neutral-600);
 
 	&:focus-visible {
+		opacity: 1;
 		outline-color: var(--color-neutral-900);
 		box-shadow:
 			0 0 0 2px var(--color-neutral-100),

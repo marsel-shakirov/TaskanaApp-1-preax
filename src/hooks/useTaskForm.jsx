@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 export const useTaskForm = (initialTask, mode) => {
 	const [formState, setFormState] = useState({
 		title: '',
-		priority: 0,
+		priority: 1,
 	})
 
 	useEffect(() => {
@@ -16,7 +16,7 @@ export const useTaskForm = (initialTask, mode) => {
 
 		return setFormState({
 			title: '',
-			priority: 0,
+			priority: 1,
 		})
 	}, [initialTask, mode])
 

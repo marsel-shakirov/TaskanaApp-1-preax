@@ -9,17 +9,31 @@ import { Button } from '@/components'
 import styles from './TaskItem.module.css'
 
 const PRIORITY_STYLE = {
-	0: 'checkmarkDefault',
-	1: 'checkmarkSecond',
-	2: 'checkmarkThird',
+	1: 'checkmarkDefault',
+	2: 'checkmarkSecond',
+	3: 'checkmarkThird',
 }
 
-export const TaskItem = ({ id, title, priority }) => {
-	const { pendingAction, openEditorWithDelay } = useTaskEditorActions(1000)
+export const TaskItem = ({
+	id,
+	title,
+	priority,
+	isTaskActive,
+	handleChangeIndex,
+}) => {
+	const { pendingAction, openEditorWithDelay } = useTaskEditorActions(500)
+
+	const handleEditTask = () => {
+		handleChangeIndex()
+		openEditorWithDelay('edit', id)
+	}
 
 	return (
 		<li
-			className={clsx(styles, 'taskItem', { loading: pendingAction })}
+			className={clsx(styles, 'taskItem', {
+				taskActive: isTaskActive,
+				loading: pendingAction,
+			})}
 			tabIndex={0}
 		>
 			<div className={styles.taskItemWrap}>
@@ -29,11 +43,11 @@ export const TaskItem = ({ id, title, priority }) => {
 						className={clsx(styles, 'checkmark', PRIORITY_STYLE[priority])}
 					></span>
 				</label>
-				<span className={styles.checkboxTitle}>{title}</span>
+				<p className={styles.checkboxTitle}>{title}</p>
 			</div>
 
 			<Button
-				onClick={() => openEditorWithDelay('edit', id)}
+				onClick={handleEditTask}
 				isLoading={pendingAction}
 				icons={[{ name: ICONS.EDIT }]}
 				classes={['buttonEditTask']}
