@@ -1,8 +1,6 @@
-import { TaskEditor } from '../taskEditor/TaskEditor'
-
 import { IncomingTasks } from '@/pages'
 
-import { NavBar, SideBar } from '@/components'
+import { NavBar, SideBar, TaskEditor } from '@/components'
 
 import styles from './content.module.css'
 

@@ -2,7 +2,7 @@ import { ICONS } from '@/constants'
 
 import { Illustration } from '@/components/illustration/Illustration.jsx'
 
-import styles from './TaskOrganizationStatus.module.css'
+import styles from './taskOrganizationStatus.module.css'
 
 export const TaskOrganizationStatus = () => {
 	return (
@@ -15,7 +15,7 @@ export const TaskOrganizationStatus = () => {
 					Отличная работа! Ты большой молодец!
 				</p>
 			</div>
-			<div className={styles.taskStatusImg}>
+			<div>
 				<Illustration name={ICONS.TASK} width="463" height="319" />
 			</div>
 		</div>

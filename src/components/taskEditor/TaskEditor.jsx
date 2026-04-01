@@ -12,7 +12,7 @@ import { Button } from '@/components'
 
 import { EditorInput, PrioritySelector } from './'
 
-import styles from './TaskEditor.module.css'
+import styles from './taskEditor.module.css'
 
 export const TaskEditor = () => {
 	const { tasks } = useTasks()

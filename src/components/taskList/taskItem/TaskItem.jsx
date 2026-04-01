@@ -6,7 +6,7 @@ import { ICONS } from '@/constants'
 
 import { Button } from '@/components'
 
-import styles from './TaskItem.module.css'
+import styles from './taskItem.module.css'
 
 const PRIORITY_STYLE = {
 	1: 'checkmarkDefault',
@@ -48,6 +48,8 @@ export const TaskItem = ({
 
 			<Button
 				onClick={handleEditTask}
+				title={`Редактировать задачу "${title}"`}
+				titleHidden={true}
 				isLoading={pendingAction}
 				icons={[{ name: ICONS.EDIT }]}
 				classes={['buttonEditTask']}

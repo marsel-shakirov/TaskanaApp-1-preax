@@ -12,7 +12,7 @@ import { Button, Icon } from '@/components'
 
 import { DropdownItem } from './'
 
-import styles from './Dropdown.module.css'
+import styles from './dropdown.module.css'
 
 export const Dropdown = () => {
 	const [isDialogOpen, setIsDialogOpen] = useState(false)

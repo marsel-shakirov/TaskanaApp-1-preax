@@ -11,7 +11,7 @@ export const NavBar = () => {
 				<li className={styles.navItem}>
 					<a className={styles.navLink} href="#">
 						<Icon name={ICONS.INBOX} />
-						<span className={styles.navLinkText}>Входящие</span>
+						<span>Входящие</span>
 					</a>
 				</li>
 			</ul>
