@@ -10,13 +10,6 @@ export const ThemeSwitcher = () => {
 	const [theme, setTheme] = useState('light')
 
 	useEffect(() => {
-		const prefersDark = window.matchMedia(
-			'(prefers-color-scheme: dark)'
-		).matches
-		setTheme(prefersDark ? 'dark' : 'light')
-	}, [])
-
-	useEffect(() => {
 		document.body.style.colorScheme = theme
 		document.body.setAttribute('data-theme', theme)
 	}, [theme])
