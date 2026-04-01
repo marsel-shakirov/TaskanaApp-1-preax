@@ -23,13 +23,13 @@ const sortByAlphabet = (items, order) => {
 			ignorePunctuation: true,
 		})
 
-		return order === 'asc' ? comparison : -comparison
+		return order === 'asc' ? -comparison : comparison
 	})
 }
 
 const sortByPriority = (items, order = 'asc') => {
 	return [...items].sort((a, b) => {
-		return order === 'asc' ? a.priority - b.priority : b.priority - a.priority
+		return order === 'asc' ? b.priority - a.priority : a.priority - b.priority
 	})
 }
 

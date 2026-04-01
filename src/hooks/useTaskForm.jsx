@@ -40,8 +40,11 @@ export const useTaskForm = (initialTask, mode) => {
 	const isDirty = useMemo(() => {
 		if (mode !== 'edit' || !initialTask) return true
 
+		const initialTitle = initialTask.title.trim()
+		const currentTitle = formState.title.trim()
+
 		return (
-			initialTask.title !== formState.title ||
+			initialTitle !== currentTitle ||
 			initialTask.priority !== formState.priority
 		)
 	}, [mode, initialTask, formState])

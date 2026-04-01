@@ -2,7 +2,7 @@
 	display: flex;
 	column-gap: var(--gap-sm);
 	justify-content: space-between;
-	align-items: center;
+	/* align-items: center; */
 	cursor: pointer;
 	outline: 2px solid transparent;
 	border-radius: 8px;
@@ -53,6 +53,7 @@
 	column-gap: var(--gap-xmd);
 	flex-grow: 1;
 	padding-block: var(--padding-xxs);
+	min-width: 0;
 }
 
 .checkbox {
@@ -71,6 +72,7 @@
 
 .checkboxLabel {
 	position: relative;
+	flex-shrink: 0;
 	align-self: flex-start;
 	.checkbox {
 		&:focus-visible + .checkmarkDefault {
@@ -130,7 +132,10 @@
 
 .checkboxTitle {
 	padding-left: var(--padding-sm);
+	min-width: 0;
 	color: var(--color-neutral-800);
 	font-size: 18px;
 	line-height: 1.333;
+	word-break: keep-all;
+	overflow-wrap: anywhere;
 }

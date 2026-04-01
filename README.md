@@ -31,5 +31,6 @@ nickname - marsel-shakirov
 1. У TaskEditor при уменьшении высоты окна должен появляться скролл [Макет](https://www.figma.com/design/L0TfICqWhRI250H0AuafPx/TaskanaApp.-1-sprint.-3-task?node-id=7401-6355&t=nourf8qvy0lDxUQA-0)
 
 - В макете это показано за счёт добавления нескольких `<PrioritySelector/>`, чтобы контент превышал высоту контейнера.
-
 - Соответственно, чтобы добиться такого же поведения, нужно временно добавить несколько <PrioritySelector/>, чтобы переполнить контейнер — тогда появится скролл, как в дизайне.
+
+2. У taskItem кнопка edit при переполнении текста в два или больше ряда должен находиться не по центру [Макет](https://www.figma.com/design/4oVHHzlqzKTYPT5m7Wd1so/TaskanaApp.-1-sprint.-4-task?node-id=5403-9667&t=CjyOqSzDMXlOxavf-0)
