@@ -2,7 +2,7 @@ import { useTasks } from '@/contexts'
 
 import { Dropdown, TaskList, TaskOrganizationStatus } from '@/components'
 
-import styles from './MainContainer.module.css'
+import styles from './mainContainer.module.css'
 
 export const MainContainer = () => {
 	const { tasks } = useTasks()
