@@ -69,7 +69,7 @@
 	}
 
 	@media (any-hover: hover) {
-		&:not(&:active, .loadingButton)&:hover {
+		&:not(&:active, .loadingButton):hover {
 			box-shadow: var(--box-shadow-baseHover);
 			background-color: var(--color-primary-base500);
 		}
